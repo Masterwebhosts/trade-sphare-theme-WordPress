@@ -37,7 +37,9 @@ get_header();
                                 <div class="ts-post-category">
 
                                     <a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>">
+
                                         <?php echo esc_html( $categories[0]->name ); ?>
+
                                     </a>
 
                                 </div>
@@ -45,32 +47,43 @@ get_header();
                             <?php endif; ?>
 
 
-
                             <h1 class="ts-post-title">
+
                                 <?php the_title(); ?>
+
                             </h1>
 
 
 
                             <div class="ts-post-meta">
 
+
                                 <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+
                                     <?php echo esc_html( get_the_date() ); ?>
+
                                 </time>
 
 
                                 <span>
+
                                     <?php
+
                                     printf(
                                         esc_html__( ' — بقلم %s', 'trade-sphare' ),
                                         esc_html( get_the_author() )
                                     );
+
                                     ?>
+
                                 </span>
 
 
+
                                 <span>
+
                                     <?php
+
                                     $content = wp_strip_all_tags( get_the_content() );
 
                                     $words = count(
@@ -85,11 +98,14 @@ get_header();
                                         ceil( $words / 200 )
                                     );
 
+
                                     printf(
                                         esc_html__( ' — %s دقائق قراءة', 'trade-sphare' ),
                                         esc_html( $minutes )
                                     );
+
                                     ?>
+
                                 </span>
 
 
@@ -98,34 +114,35 @@ get_header();
 
                         </header>
 
-                     <a class="ts-related-thumbnail"
-                      href="<?php the_permalink(); ?>">
 
-                       <?php
-                    if ( has_post_thumbnail() ) {
 
-                     the_post_thumbnail(
-                      'medium',
-                      array(
-                       'loading' => 'lazy',
-                      )
-                        );
+                        <?php if ( has_post_thumbnail() ) : ?>
 
-                       } else {
-                    ?>
-        
-                   <div class="ts-related-placeholder">
-                      Trade Sphare
-                   </div>
 
-                   <?php
-                       }
-                          ?>
+                            <div class="ts-post-thumbnail">
 
-                      </a>
 
-                       
+                                <?php
+
+                                the_post_thumbnail(
+                                    'large',
+                                    array(
+                                        'loading' => 'eager',
+                                    )
+                                );
+
+                                ?>
+
+
+                            </div>
+
+
+                        <?php endif; ?>
+
+
+
                         <div class="ts-post-content">
+
 
                             <?php
 
@@ -144,47 +161,62 @@ get_header();
 
                             ?>
 
+
                         </div>
 
-
-
-
-
-
-                        <!-- Advertiser CTA -->
+                                                <!-- Advertiser CTA -->
 
                         <section class="ts-post-cta">
 
 
                             <h2>
-                                <?php esc_html_e(
+
+                                <?php
+
+                                esc_html_e(
                                     'هل تريد الوصول إلى جمهور مستهدف؟',
                                     'trade-sphare'
-                                ); ?>
+                                );
+
+                                ?>
+
                             </h2>
 
 
+
                             <p>
-                                <?php esc_html_e(
+
+                                <?php
+
+                                esc_html_e(
                                     'اعرض إعلانك على Trade Sphare واحصل على فرص نمو أفضل.',
                                     'trade-sphare'
-                                ); ?>
+                                );
+
+                                ?>
+
                             </p>
+
 
 
                             <a class="ts-button"
                                href="<?php echo esc_url( home_url( '/#advertisers' ) ); ?>">
 
-                                <?php esc_html_e(
+
+                                <?php
+
+                                esc_html_e(
                                     'ابدأ الإعلان',
                                     'trade-sphare'
-                                ); ?>
+                                );
+
+                                ?>
+
 
                             </a>
 
 
                         </section>
-
 
 
 
@@ -192,38 +224,58 @@ get_header();
 
                         <!-- Publisher CTA -->
 
+
                         <section class="ts-post-cta">
 
 
                             <h2>
-                                <?php esc_html_e(
+
+                                <?php
+
+                                esc_html_e(
                                     'هل لديك محتوى أو موقع؟',
                                     'trade-sphare'
-                                ); ?>
+                                );
+
+                                ?>
+
                             </h2>
 
 
+
                             <p>
-                                <?php esc_html_e(
+
+                                <?php
+
+                                esc_html_e(
                                     'انضم إلى شبكة الناشرين وحقق دخلاً من المحتوى الخاص بك.',
                                     'trade-sphare'
-                                ); ?>
+                                );
+
+                                ?>
+
                             </p>
+
 
 
                             <a class="ts-button"
                                href="<?php echo esc_url( home_url( '/#publishers' ) ); ?>">
 
-                                <?php esc_html_e(
+
+                                <?php
+
+                                esc_html_e(
                                     'انضم كناشر',
                                     'trade-sphare'
-                                ); ?>
+                                );
+
+                                ?>
+
 
                             </a>
 
 
                         </section>
-
 
 
 
@@ -232,23 +284,34 @@ get_header();
 
                         <!-- Tags -->
 
+
                         <footer class="ts-post-footer">
 
 
                             <?php
+
                             $tags = get_the_tags();
 
+
                             if ( $tags ) :
+
                             ?>
+
 
                                 <div class="ts-post-meta">
 
 
                                     <strong>
-                                        <?php esc_html_e(
+
+                                        <?php
+
+                                        esc_html_e(
                                             'الوسوم:',
                                             'trade-sphare'
-                                        ); ?>
+                                        );
+
+                                        ?>
+
                                     </strong>
 
 
@@ -258,7 +321,9 @@ get_header();
 
                                         <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>">
 
+
                                             <?php echo esc_html( $tag->name ); ?>
+
 
                                         </a>
 
@@ -279,23 +344,27 @@ get_header();
 
 
 
-
-
                         <!-- Author Box -->
+
 
                         <section class="ts-author-box">
 
 
                             <div class="ts-author-avatar">
 
+
                                 <?php
+
                                 echo get_avatar(
                                     get_the_author_meta( 'ID' ),
                                     80
                                 );
+
                                 ?>
 
+
                             </div>
+
 
 
 
@@ -303,16 +372,23 @@ get_header();
 
 
                                 <h3>
+
                                     <?php echo esc_html( get_the_author() ); ?>
+
                                 </h3>
 
 
+
                                 <p>
+
                                     <?php
+
                                     echo esc_html(
                                         get_the_author_meta( 'description' )
                                     );
+
                                     ?>
+
                                 </p>
 
 
@@ -321,268 +397,136 @@ get_header();
 
                         </section>
 
-
-
-
-
-
-
-
-
-                        <!-- Related Posts -->
-
-<?php
-$related_posts = new WP_Query(
-    array(
-        'posts_per_page' => 3,
-        'post__not_in'  => array( get_the_ID() ),
-        'category__in'  => wp_get_post_categories( get_the_ID() ),
-        'orderby'       => 'rand',
-    )
-);
-
-if ( $related_posts->have_posts() ) :
-?>
-
-<section class="ts-related-posts">
-
-    <h2 class="ts-related-title">
-        <?php esc_html_e( 'مقالات مشابهة', 'trade-sphare' ); ?>
-    </h2>
-
-
-    <div class="ts-related-grid">
-
-
-        <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
-
-
-            <article class="ts-related-card">
-
-
-                <?php if ( has_post_thumbnail() ) : ?>
-
-                    <a class="ts-related-thumbnail"
-                       href="<?php the_permalink(); ?>">
+                                                <!-- Related Posts -->
 
                         <?php
-                        the_post_thumbnail(
-                            'medium',
+
+                        $related_posts = new WP_Query(
                             array(
-                                'loading' => 'lazy',
+                                'posts_per_page' => 3,
+                                'post__not_in'   => array( get_the_ID() ),
+                                'category__in'   => wp_get_post_categories( get_the_ID() ),
+                                'orderby'        => 'rand',
                             )
                         );
+
+
+                        if ( $related_posts->have_posts() ) :
+
                         ?>
 
-                    </a>
 
-                <?php endif; ?>
-
-
-                <div class="ts-related-content">
+                            <section class="ts-related-posts">
 
 
-                    <?php
-                    $categories = get_the_category();
+                                <h2 class="ts-related-title">
 
-                    if ( ! empty( $categories ) ) :
-                    ?>
+                                    <?php esc_html_e( 'مقالات ذات صلة', 'trade-sphare' ); ?>
 
-                    <span class="ts-related-category">
-                        <?php echo esc_html( $categories[0]->name ); ?>
-                    </span>
-
-                    <?php endif; ?>
-
-
-                    <h3 class="ts-related-card-title">
-
-                        <a href="<?php the_permalink(); ?>">
-
-                            <?php the_title(); ?>
-
-                        </a>
-
-                    </h3>
-
-
-                    <time class="ts-related-date">
-
-                        <?php echo esc_html( get_the_date() ); ?>
-
-                    </time>
-
-
-                </div>
-
-
-            </article>
-
-
-        <?php endwhile; ?>
-
-
-    </div>
-
-
-</section>
-
-
-<?php
-endif;
-
-wp_reset_postdata();
-?>
-
-
-                        </section>
+                                </h2>
 
 
 
+                                <div class="ts-related-grid">
 
+
+                                    <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+
+
+                                        <article class="ts-related-card">
+
+
+                                            <div class="ts-related-content">
+
+
+                                                <?php
+                                                $categories = get_the_category();
+
+                                                if ( ! empty( $categories ) ) :
+                                                ?>
+
+                                                    <span class="ts-related-category">
+
+                                                        <?php echo esc_html( $categories[0]->name ); ?>
+
+                                                    </span>
+
+                                                <?php endif; ?>
+
+
+
+                                                <h3 class="ts-related-card-title">
+
+                                                    <a href="<?php the_permalink(); ?>">
+
+                                                        <?php the_title(); ?>
+
+                                                    </a>
+
+                                                </h3>
+
+
+
+                                                <time class="ts-related-date">
+
+                                                    <?php echo esc_html( get_the_date() ); ?>
+
+                                                </time>
+
+
+                                            </div>
+
+
+                                        </article>
+
+
+                                    <?php endwhile; ?>
+
+
+                                </div>
+
+
+                            </section>
+
+
+                        <?php
+
+                        endif;
+
+                        wp_reset_postdata();
+
+                        ?>
+
+
+
+
+                        <!-- Post Navigation -->
+
+
+                        <nav class="ts-post-navigation"
+                             aria-label="<?php esc_attr_e( 'تنقل المقالات', 'trade-sphare' ); ?>">
+
+
+                            <div class="ts-post-navigation-previous">
+
+                                <?php previous_post_link( '%link', '← %title' ); ?>
+
+                            </div>
+
+
+
+                            <div class="ts-post-navigation-next">
+
+                                <?php next_post_link( '%link', '%title →' ); ?>
+
+                            </div>
+
+
+                        </nav>
 
 
 
                     </article>
-
-                     <?php
-$current_post_id = get_the_ID();
-
-$categories = wp_get_post_categories(
-    $current_post_id,
-    array(
-        'fields' => 'ids',
-    )
-);
-
-if ( ! empty( $categories ) ) :
-
-    $related_posts = new WP_Query(
-        array(
-            'category__in'   => $categories,
-            'post__not_in'   => array( $current_post_id ),
-            'posts_per_page' => 3,
-            'orderby'        => 'rand',
-        )
-    );
-
-    if ( $related_posts->have_posts() ) :
-?>
-
-<section class="ts-related-posts">
-
-    <h2 class="ts-related-title">
-        <?php esc_html_e( 'مقالات ذات صلة', 'trade-sphare' ); ?>
-    </h2>
-
-
-    <div class="ts-related-grid">
-
-
-        <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
-
-
-            <article class="ts-related-card">
-
-
-                <?php if ( has_post_thumbnail() ) : ?>
-
-                    <a href="<?php the_permalink(); ?>" class="ts-related-image">
-
-                        <?php
-                        the_post_thumbnail(
-                            'medium',
-                            array(
-                                'loading' => 'lazy',
-                            )
-                        );
-                        ?>
-
-                    </a>
-
-                <?php endif; ?>
-
-
-                <div class="ts-related-content">
-
-
-                    <h3>
-
-                        <a href="<?php the_permalink(); ?>">
-
-                            <?php the_title(); ?>
-
-                        </a>
-
-                    </h3>
-
-
-                    <time>
-
-                        <?php echo esc_html( get_the_date() ); ?>
-
-                    </time>
-
-
-                </div>
-
-
-            </article>
-
-
-        <?php endwhile; ?>
-
-
-    </div>
-
-
-</section>
-
-
-<?php
-
-    endif;
-
-    wp_reset_postdata();
-
-endif;
-?>
-
-                    <!-- Post Navigation -->
-
-                    <nav class="ts-post-navigation"
-                         aria-label="<?php esc_attr_e( 'تنقل المقالات', 'trade-sphare' ); ?>">
-
-
-                        <div class="ts-post-navigation-previous">
-
-                            <?php
-                            previous_post_link(
-                                '%link',
-                                '← %title'
-                            );
-                            ?>
-
-                        </div>
-
-
-
-                        <div class="ts-post-navigation-next">
-
-                            <?php
-                            next_post_link(
-                                '%link',
-                                '%title →'
-                            );
-                            ?>
-
-                        </div>
-
-
-                    </nav>
-
-
-
 
 
                 <?php endwhile; ?>
@@ -594,25 +538,21 @@ endif;
 
                 <div class="ts-no-results">
 
-
                     <h1>
-                        <?php esc_html_e(
-                            'المقال غير موجود',
-                            'trade-sphare'
-                        ); ?>
+
+                        <?php esc_html_e( 'المقال غير موجود', 'trade-sphare' ); ?>
+
                     </h1>
 
 
                     <p>
-                        <?php esc_html_e(
-                            'عذراً لم نتمكن من العثور على المقال المطلوب.',
-                            'trade-sphare'
-                        ); ?>
+
+                        <?php esc_html_e( 'عذراً لم نتمكن من العثور على المقال المطلوب.', 'trade-sphare' ); ?>
+
                     </p>
 
 
                 </div>
-
 
 
             <?php endif; ?>
@@ -627,5 +567,7 @@ endif;
 
 
 <?php
+
 get_footer();
+
 ?>
