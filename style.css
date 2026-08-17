@@ -439,28 +439,27 @@ h1.ts-post-title {
 ========================================================= */
 
 .ts-pagination {
-    margin-top: 45px;
+    margin-top: 40px;
 }
 
 .ts-pagination .nav-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .ts-pagination .page-numbers {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 42px;
-    min-height: 42px;
-    padding: 8px 14px;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 6px 12px;
     border: 1px solid var(--ts-border-light);
-    border-radius: var(--ts-radius-md);
-    background: var(--ts-surface);
+    border-radius: 8px;
     color: var(--ts-text-700);
-    font-weight: 600;
+    background: var(--ts-surface);
     transition: all .2s ease;
 }
 
@@ -482,13 +481,13 @@ h1.ts-post-title {
 
 .ts-author-box {
     display: flex;
-    gap: 25px;
-    align-items: center;
+    align-items: flex-start;
+    gap: 20px;
     margin: 50px 0;
     padding: 30px;
     background: var(--ts-surface-soft);
     border: 1px solid var(--ts-border-light);
-    border-radius: var(--ts-radius-lg);
+    border-radius: 16px;
 }
 
 .ts-author-avatar img {
@@ -502,53 +501,33 @@ h1.ts-post-title {
 
 .ts-author-content p {
     margin: 0;
-    color: var(--ts-text-600);
+    color: var(--ts-text-700);
 }
 
 
 /* =========================================================
-   RELATED POSTS
+   POST NAVIGATION
 ========================================================= */
 
-.ts-related-posts {
-    margin: 60px 0;
+.ts-post-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 40px 0;
 }
 
-.ts-related-title {
-    margin-bottom: 25px;
-    color: var(--ts-text-950);
-}
-
-.ts-related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.ts-related-card {
-    padding: 20px;
+.ts-post-navigation a {
+    display: block;
+    padding: 15px 20px;
     border: 1px solid var(--ts-border-light);
-    border-radius: var(--ts-radius-lg);
-    background: var(--ts-surface);
+    border-radius: 10px;
+    color: var(--ts-text-700);
+    transition: .2s ease;
 }
 
-.ts-related-card h3 {
-    margin-top: 0;
-    font-size: 20px;
-}
-
-.ts-related-card a:hover {
+.ts-post-navigation a:hover {
+    border-color: var(--ts-primary);
     color: var(--ts-primary);
-}
-
-
-/* =========================================================
-   NO RESULTS
-========================================================= */
-
-.ts-no-results {
-    padding: 80px 0;
-    text-align: center;
 }
 
 
@@ -557,7 +536,7 @@ h1.ts-post-title {
 ========================================================= */
 
 .ts-site-footer {
-    padding: 60px 0 25px;
+    padding: 50px 0 20px;
     background: var(--ts-text-950);
     color: var(--ts-surface);
 }
@@ -575,8 +554,8 @@ h1.ts-post-title {
 
 .ts-footer-description {
     max-width: 450px;
-    margin-top: 12px;
-    color: var(--ts-text-500);
+    margin: 10px 0 0;
+    color: var(--ts-text-600);
 }
 
 .ts-footer-menu {
@@ -589,7 +568,7 @@ h1.ts-post-title {
 }
 
 .ts-footer-menu a {
-    color: var(--ts-text-500);
+    color: var(--ts-text-600);
 }
 
 .ts-footer-menu a:hover {
@@ -612,11 +591,12 @@ h1.ts-post-title {
 @media (max-width:768px) {
 
     .ts-container {
-        width: calc(100% - 30px);
+        width: min(100% - 30px, 1180px);
     }
 
 
     .ts-header-inner {
+        position: relative;
         min-height: 68px;
     }
 
@@ -631,9 +611,11 @@ h1.ts-post-title {
         position: absolute;
         top: 100%;
         inset-inline: 0;
+        z-index: 100;
         padding: 15px;
         background: var(--ts-surface);
         border: 1px solid var(--ts-border-light);
+        border-top: 0;
     }
 
 
@@ -644,13 +626,14 @@ h1.ts-post-title {
 
     .ts-menu {
         flex-direction: column;
+        align-items: stretch;
         gap: 0;
     }
 
 
     .ts-menu a {
         padding: 12px 8px;
-        border-bottom: 1px solid var(--ts-border-light);
+        border-bottom: 1px solid var(--ts-surface-soft);
     }
 
 
@@ -659,14 +642,21 @@ h1.ts-post-title {
     }
 
 
-    .ts-related-grid {
-        grid-template-columns: 1fr;
+    .ts-footer-menu {
+        flex-direction: column;
+        gap: 8px;
     }
 
 
     .ts-author-box {
         flex-direction: column;
         text-align: center;
+        align-items: center;
+    }
+
+
+    .ts-post-navigation {
+        flex-direction: column;
     }
 
 }
