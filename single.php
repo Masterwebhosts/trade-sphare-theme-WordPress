@@ -433,11 +433,108 @@ get_header();
 
                     </article>
 
+                     <?php
+$current_post_id = get_the_ID();
+
+$categories = wp_get_post_categories(
+    $current_post_id,
+    array(
+        'fields' => 'ids',
+    )
+);
+
+if ( ! empty( $categories ) ) :
+
+    $related_posts = new WP_Query(
+        array(
+            'category__in'   => $categories,
+            'post__not_in'   => array( $current_post_id ),
+            'posts_per_page' => 3,
+            'orderby'        => 'rand',
+        )
+    );
+
+    if ( $related_posts->have_posts() ) :
+?>
+
+<section class="ts-related-posts">
+
+    <h2 class="ts-related-title">
+        <?php esc_html_e( 'مقالات ذات صلة', 'trade-sphare' ); ?>
+    </h2>
 
 
+    <div class="ts-related-grid">
 
 
+        <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
 
+
+            <article class="ts-related-card">
+
+
+                <?php if ( has_post_thumbnail() ) : ?>
+
+                    <a href="<?php the_permalink(); ?>" class="ts-related-image">
+
+                        <?php
+                        the_post_thumbnail(
+                            'medium',
+                            array(
+                                'loading' => 'lazy',
+                            )
+                        );
+                        ?>
+
+                    </a>
+
+                <?php endif; ?>
+
+
+                <div class="ts-related-content">
+
+
+                    <h3>
+
+                        <a href="<?php the_permalink(); ?>">
+
+                            <?php the_title(); ?>
+
+                        </a>
+
+                    </h3>
+
+
+                    <time>
+
+                        <?php echo esc_html( get_the_date() ); ?>
+
+                    </time>
+
+
+                </div>
+
+
+            </article>
+
+
+        <?php endwhile; ?>
+
+
+    </div>
+
+
+</section>
+
+
+<?php
+
+    endif;
+
+    wp_reset_postdata();
+
+endif;
+?>
 
                     <!-- Post Navigation -->
 
