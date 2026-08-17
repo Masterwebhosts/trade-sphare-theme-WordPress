@@ -98,30 +98,33 @@ get_header();
 
                         </header>
 
+                     <a class="ts-related-thumbnail"
+                      href="<?php the_permalink(); ?>">
 
+                       <?php
+                    if ( has_post_thumbnail() ) {
 
+                     the_post_thumbnail(
+                      'medium',
+                      array(
+                       'loading' => 'lazy',
+                      )
+                        );
 
-                        <?php if ( has_post_thumbnail() ) : ?>
+                       } else {
+                    ?>
+        
+                   <div class="ts-related-placeholder">
+                      Trade Sphare
+                   </div>
 
-                            <div class="ts-post-thumbnail">
+                   <?php
+                       }
+                          ?>
 
-                                <?php
-                                the_post_thumbnail(
-                                    'large',
-                                    array(
-                                        'loading' => 'eager',
-                                    )
-                                );
-                                ?>
+                      </a>
 
-                            </div>
-
-                        <?php endif; ?>
-
-
-
-
-
+                       
                         <div class="ts-post-content">
 
                             <?php
@@ -328,99 +331,108 @@ get_header();
 
                         <!-- Related Posts -->
 
-                        <section class="ts-related-posts">
+<?php
+$related_posts = new WP_Query(
+    array(
+        'posts_per_page' => 3,
+        'post__not_in'  => array( get_the_ID() ),
+        'category__in'  => wp_get_post_categories( get_the_ID() ),
+        'orderby'       => 'rand',
+    )
+);
+
+if ( $related_posts->have_posts() ) :
+?>
+
+<section class="ts-related-posts">
+
+    <h2 class="ts-related-title">
+        <?php esc_html_e( 'مقالات مشابهة', 'trade-sphare' ); ?>
+    </h2>
 
 
-                            <h2>
-                                <?php esc_html_e(
-                                    'مقالات مشابهة',
-                                    'trade-sphare'
-                                ); ?>
-                            </h2>
+    <div class="ts-related-grid">
 
 
+        <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
 
 
-                            <?php
-
-                            $related_posts = new WP_Query(
-                                array(
-                                    'category__in' => wp_get_post_categories(
-                                        get_the_ID()
-                                    ),
-
-                                    'post__not_in' => array(
-                                        get_the_ID()
-                                    ),
-
-                                    'posts_per_page' => 3,
-
-                                    'orderby' => 'rand',
-                                )
-                            );
+            <article class="ts-related-card">
 
 
-                            if ( $related_posts->have_posts() ) :
-                            ?>
+                <?php if ( has_post_thumbnail() ) : ?>
+
+                    <a class="ts-related-thumbnail"
+                       href="<?php the_permalink(); ?>">
+
+                        <?php
+                        the_post_thumbnail(
+                            'medium',
+                            array(
+                                'loading' => 'lazy',
+                            )
+                        );
+                        ?>
+
+                    </a>
+
+                <?php endif; ?>
 
 
-
-                                <div class="ts-related-grid">
-
+                <div class="ts-related-content">
 
 
-                                    <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
+                    <?php
+                    $categories = get_the_category();
+
+                    if ( ! empty( $categories ) ) :
+                    ?>
+
+                    <span class="ts-related-category">
+                        <?php echo esc_html( $categories[0]->name ); ?>
+                    </span>
+
+                    <?php endif; ?>
 
 
-                                        <article class="ts-related-card">
+                    <h3 class="ts-related-card-title">
+
+                        <a href="<?php the_permalink(); ?>">
+
+                            <?php the_title(); ?>
+
+                        </a>
+
+                    </h3>
 
 
-                                            <?php if ( has_post_thumbnail() ) : ?>
+                    <time class="ts-related-date">
+
+                        <?php echo esc_html( get_the_date() ); ?>
+
+                    </time>
 
 
-                                                <a href="<?php the_permalink(); ?>">
-
-                                                    <?php
-                                                    the_post_thumbnail(
-                                                        'medium'
-                                                    );
-                                                    ?>
-
-                                                </a>
+                </div>
 
 
-                                            <?php endif; ?>
+            </article>
 
 
-
-                                            <h3>
-
-                                                <a href="<?php the_permalink(); ?>">
-
-                                                    <?php the_title(); ?>
-
-                                                </a>
-
-                                            </h3>
+        <?php endwhile; ?>
 
 
-
-                                        </article>
-
+    </div>
 
 
-                                    <?php endwhile; ?>
+</section>
 
 
+<?php
+endif;
 
-                                </div>
-
-
-
-                            <?php endif; ?>
-
-
-                            <?php wp_reset_postdata(); ?>
+wp_reset_postdata();
+?>
 
 
                         </section>
