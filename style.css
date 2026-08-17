@@ -37,17 +37,7 @@ Text Domain: trade-sphare
 
     --ts-success: #16a34a;
     --ts-danger: #ef4444;
-
-    --ts-shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
-    --ts-shadow-md: 0 10px 30px rgba(37, 99, 235, 0.12);
-    --ts-shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.14);
-
-    --ts-radius-sm: 7px;
-    --ts-radius-md: 10px;
-    --ts-radius-lg: 14px;
-    --ts-radius-xl: 18px;
 }
-
 
 /* =========================================================
    RESET
@@ -68,8 +58,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #ffffff;
-    color: #1f2937;
+    background: var(--ts-surface);
+    color: var(--ts-text-800);
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -131,8 +121,8 @@ select {
 
 .ts-site-header {
     width: 100%;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    background: var(--ts-surface);
+    border-bottom: 1px solid var(--ts-border-light);
 }
 
 .ts-header-inner {
@@ -151,7 +141,7 @@ select {
     display: inline-block;
     font-size: 24px;
     font-weight: 800;
-    color: #111827;
+    color: var(--ts-text-950);
 }
 
 .ts-site-branding .custom-logo-link {
@@ -190,15 +180,15 @@ select {
 .ts-menu a {
     display: block;
     padding: 8px 0;
-    color: #374151;
+    color: var(--ts-text-700);
     font-size: 15px;
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
 .ts-menu a:hover,
-.ts-menu .current-menu-item > a {
-    color: #2563eb;
+.ts-menu .current-menu-item>a {
+    color: var(--ts-primary);
 }
 
 
@@ -211,18 +201,18 @@ select {
     width: 44px;
     height: 44px;
     padding: 9px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--ts-text-600);
     border-radius: 8px;
-    background: #ffffff;
+    background: var(--ts-surface);
     cursor: pointer;
 }
 
-.ts-menu-toggle > span:not(.screen-reader-text) {
+.ts-menu-toggle>span:not(.screen-reader-text) {
     display: block;
     width: 100%;
     height: 2px;
     margin: 5px 0;
-    background: #111827;
+    background: var(--ts-text-950);
 }
 
 
@@ -264,7 +254,7 @@ select {
 
 .ts-post-title {
     margin: 0 0 10px;
-    color: #111827;
+    color: var(--ts-text-950);
     line-height: 1.3;
 }
 
@@ -277,13 +267,13 @@ h2.ts-post-title {
 }
 
 .ts-post-meta {
-    color: #6b7280;
+    color: var(--ts-text-500);
     font-size: 14px;
 }
 
 .ts-post-content {
     max-width: 800px;
-    color: #374151;
+    color: var(--ts-text-700);
 }
 
 .ts-post-content p {
@@ -294,7 +284,7 @@ h2.ts-post-title {
 .ts-post-content h3,
 .ts-post-content h4 {
     margin-top: 35px;
-    color: #111827;
+    color: var(--ts-text-950);
 }
 
 .ts-post-content ul,
@@ -329,14 +319,14 @@ h2.ts-post-title {
     min-width: 40px;
     min-height: 40px;
     padding: 6px 12px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--ts-border-light);
     border-radius: 7px;
 }
 
 .ts-pagination .current {
-    background: #2563eb;
-    border-color: #2563eb;
-    color: #ffffff;
+    background: var(--ts-primary);
+    border-color: var(--ts-primary);
+    color: var(--ts-surface);
 }
 
 
@@ -356,8 +346,8 @@ h2.ts-post-title {
 
 .ts-site-footer {
     padding: 50px 0 20px;
-    background: #111827;
-    color: #ffffff;
+    background: var(--ts-text-950);
+    color: var(--ts-surface);
 }
 
 .ts-footer-inner {
@@ -374,7 +364,7 @@ h2.ts-post-title {
 .ts-footer-description {
     max-width: 450px;
     margin: 10px 0 0;
-    color: #d1d5db;
+    color: var(--ts-text-600);
 }
 
 .ts-footer-menu {
@@ -387,18 +377,18 @@ h2.ts-post-title {
 }
 
 .ts-footer-menu a {
-    color: #d1d5db;
+    color: var(--ts-text-600);
 }
 
 .ts-footer-menu a:hover {
-    color: #ffffff;
+    color: var(--ts-surface);
 }
 
 .ts-footer-bottom {
     margin-top: 35px;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
-    color: #9ca3af;
+    color: var(--ts-text-500);
     font-size: 14px;
 }
 
@@ -429,8 +419,8 @@ h2.ts-post-title {
         inset-inline: 0;
         z-index: 100;
         padding: 15px;
-        background: #ffffff;
-        border: 1px solid #e5e7eb;
+        background: var(--ts-surface);
+        border: 1px solid var(--ts-border-light);
         border-top: 0;
     }
 
@@ -446,7 +436,7 @@ h2.ts-post-title {
 
     .ts-menu a {
         padding: 12px 8px;
-        border-bottom: 1px solid #f3f4f6;
+        border-bottom: 1px solid var(--ts-surface-soft);
     }
 
     .ts-footer-inner {
@@ -459,4 +449,3 @@ h2.ts-post-title {
     }
 
 }
-
