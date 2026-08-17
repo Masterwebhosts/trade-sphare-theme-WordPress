@@ -8,19 +8,19 @@ Version: 1.0.1
 Text Domain: trade-sphare
 */
 
+
 /* =========================================================
    TRADE SPHARE BRAND TOKENS
 ========================================================= */
 
 :root {
+
     --ts-primary: #2563eb;
     --ts-primary-hover: #3b82f6;
     --ts-accent: #38bdf8;
-    --ts-primary-light: #60a5fa;
 
     --ts-navy-950: #020617;
     --ts-navy-900: #0f172a;
-    --ts-navy-800: #1e293b;
 
     --ts-text-950: #111827;
     --ts-text-800: #1f2937;
@@ -37,7 +37,14 @@ Text Domain: trade-sphare
 
     --ts-success: #16a34a;
     --ts-danger: #ef4444;
+
+
+    /* Radius */
+    --ts-radius-sm: 6px;
+    --ts-radius-md: 10px;
+    --ts-radius-lg: 16px;
 }
+
 
 /* =========================================================
    RESET
@@ -49,17 +56,23 @@ Text Domain: trade-sphare
     box-sizing: border-box;
 }
 
+
 html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
 }
 
+
 body {
+
     margin: 0;
     padding: 0;
+
     background: var(--ts-surface);
+
     color: var(--ts-text-800);
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -67,167 +80,183 @@ body {
         Tahoma,
         Arial,
         sans-serif;
+
     line-height: 1.7;
+
 }
+
 
 img {
+
     max-width: 100%;
     height: auto;
+
 }
 
+
 a {
+
     color: inherit;
     text-decoration: none;
+
 }
+
 
 button,
 input,
 textarea,
 select {
+
     font: inherit;
+
 }
 
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-.screen-reader-text {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
 
 
 /* =========================================================
    CONTAINER
 ========================================================= */
 
+
 .ts-container {
+
     width: min(1180px, calc(100% - 40px));
+
     margin-inline: auto;
+
 }
 
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.ts-site-header {
-    width: 100%;
-    background: var(--ts-surface);
-    border-bottom: 1px solid var(--ts-border-light);
-}
-
-.ts-header-inner {
-    min-height: 76px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.ts-site-branding {
-    flex-shrink: 0;
-}
-
-.ts-site-title {
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--ts-text-950);
-}
-
-.ts-site-branding .custom-logo-link {
-    display: block;
-}
-
-.ts-site-branding .custom-logo {
-    display: block;
-    max-height: 55px;
-    width: auto;
-}
-
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-.ts-navigation {
-    margin-inline-start: auto;
-}
-
-.ts-menu {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.ts-menu li {
-    margin: 0;
-    padding: 0;
-}
-
-.ts-menu a {
-    display: block;
-    padding: 8px 0;
-    color: var(--ts-text-700);
-    font-size: 15px;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.ts-menu a:hover,
-.ts-menu .current-menu-item>a {
-    color: var(--ts-primary);
-}
-
-
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
-
-.ts-menu-toggle {
-    display: none;
-    width: 44px;
-    height: 44px;
-    padding: 9px;
-    border: 1px solid var(--ts-text-600);
-    border-radius: 8px;
-    background: var(--ts-surface);
-    cursor: pointer;
-}
-
-.ts-menu-toggle>span:not(.screen-reader-text) {
-    display: block;
-    width: 100%;
-    height: 2px;
-    margin: 5px 0;
-    background: var(--ts-text-950);
-}
 
 
 /* =========================================================
    MAIN
 ========================================================= */
 
+
 .ts-site-main {
+
     min-height: 60vh;
+
 }
+
 
 .ts-content-area {
+
     padding-block: 60px;
+
 }
 
+
+
+/* =========================================================
+   POSTS
+========================================================= */
+
+
+.ts-post {
+
+    margin-bottom: 60px;
+
+}
+
+
+.ts-post-thumbnail {
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+
+    border-radius: var(--ts-radius-lg);
+
+}
+
+
+.ts-post-thumbnail img {
+
+    display: block;
+
+    width: 100%;
+
+}
+
+
+
+.ts-post-header {
+
+    margin-bottom: 30px;
+
+}
+
+
+.ts-post-title {
+
+    margin: 0 0 15px;
+
+    color: var(--ts-text-950);
+
+    line-height: 1.3;
+
+}
+
+
+h1.ts-post-title {
+
+    font-size: clamp(32px, 5vw, 48px);
+
+}
+
+
+
+.ts-post-meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    color: var(--ts-text-500);
+
+    font-size: 14px;
+
+}
+
+
+
+/* محتوى المقال */
+
+.ts-post-content {
+
+    max-width: 820px;
+
+    color: var(--ts-text-700);
+
+}
+
+
+.ts-post-content p {
+
+    margin-bottom: 22px;
+
+}
+
+
+.ts-post-content h2,
+.ts-post-content h3,
+.ts-post-content h4 {
+
+    margin-top: 40px;
+
+    color: var(--ts-text-950);
+
+}
+
+
+.ts-post-content img {
+
+    border-radius: var(--ts-radius-md);
+
+}
 
 /* =========================================================
    POSTS
@@ -238,62 +267,170 @@ select {
 }
 
 .ts-post-thumbnail {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     overflow: hidden;
-    border-radius: 14px;
+    border-radius: var(--ts-radius-lg);
 }
 
 .ts-post-thumbnail img {
     display: block;
     width: 100%;
+    height: auto;
 }
 
 .ts-post-header {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
+
+/* Category badge */
+
+.ts-post-category {
+    margin-bottom: 15px;
+}
+
+.ts-post-category a {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background: var(--ts-surface-blue);
+    color: var(--ts-primary);
+    border-radius: var(--ts-radius-sm);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* Title */
+
 .ts-post-title {
-    margin: 0 0 10px;
+    margin: 0 0 15px;
     color: var(--ts-text-950);
-    line-height: 1.3;
+    line-height: 1.25;
 }
 
 h1.ts-post-title {
-    font-size: clamp(32px, 5vw, 48px);
+    font-size: clamp(32px, 5vw, 52px);
 }
 
-h2.ts-post-title {
-    font-size: clamp(26px, 4vw, 36px);
-}
+
+/* Meta */
 
 .ts-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     color: var(--ts-text-500);
     font-size: 14px;
 }
 
+
+/* Content */
+
 .ts-post-content {
-    max-width: 800px;
+    max-width: 820px;
     color: var(--ts-text-700);
 }
 
+
 .ts-post-content p {
-    margin: 0 0 20px;
+    margin: 0 0 22px;
 }
+
 
 .ts-post-content h2,
 .ts-post-content h3,
 .ts-post-content h4 {
-    margin-top: 35px;
+    margin-top: 40px;
+    margin-bottom: 15px;
     color: var(--ts-text-950);
 }
+
 
 .ts-post-content ul,
 .ts-post-content ol {
     margin-bottom: 25px;
+    padding-inline-start: 25px;
 }
 
+
 .ts-post-content img {
-    border-radius: 10px;
+    border-radius: var(--ts-radius-md);
+}
+
+
+
+/* =========================================================
+   CTA BOXES
+========================================================= */
+
+
+.ts-post-cta {
+
+    margin: 45px 0;
+
+    padding: 35px;
+
+    border-radius: var(--ts-radius-lg);
+
+    background:
+        linear-gradient(135deg,
+            var(--ts-surface-blue),
+            var(--ts-surface-soft));
+
+    border: 1px solid var(--ts-border-light);
+
+}
+
+
+.ts-post-cta h2 {
+
+    margin-top: 0;
+
+    color: var(--ts-text-950);
+
+}
+
+
+.ts-post-cta p {
+
+    color: var(--ts-text-700);
+
+}
+
+
+
+/* Button */
+
+.ts-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 15px;
+
+    padding: 12px 24px;
+
+    border-radius: var(--ts-radius-md);
+
+    background: var(--ts-primary);
+
+    color: var(--ts-surface);
+
+    font-weight: 700;
+
+    transition: .2s ease;
+
+}
+
+
+.ts-button:hover {
+
+    background: var(--ts-primary-hover);
+
 }
 
 
@@ -302,31 +439,106 @@ h2.ts-post-title {
 ========================================================= */
 
 .ts-pagination {
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 .ts-pagination .nav-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .ts-pagination .page-numbers {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 40px;
-    min-height: 40px;
-    padding: 6px 12px;
+    min-width: 42px;
+    min-height: 42px;
+    padding: 8px 14px;
     border: 1px solid var(--ts-border-light);
-    border-radius: 7px;
+    border-radius: var(--ts-radius-md);
+    background: var(--ts-surface);
+    color: var(--ts-text-700);
+    font-weight: 600;
+    transition: all .2s ease;
+}
+
+.ts-pagination .page-numbers:hover {
+    border-color: var(--ts-primary);
+    color: var(--ts-primary);
 }
 
 .ts-pagination .current {
     background: var(--ts-primary);
     border-color: var(--ts-primary);
     color: var(--ts-surface);
+}
+
+
+/* =========================================================
+   AUTHOR BOX
+========================================================= */
+
+.ts-author-box {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin: 50px 0;
+    padding: 30px;
+    background: var(--ts-surface-soft);
+    border: 1px solid var(--ts-border-light);
+    border-radius: var(--ts-radius-lg);
+}
+
+.ts-author-avatar img {
+    border-radius: 50%;
+}
+
+.ts-author-content h3 {
+    margin: 0 0 10px;
+    color: var(--ts-text-950);
+}
+
+.ts-author-content p {
+    margin: 0;
+    color: var(--ts-text-600);
+}
+
+
+/* =========================================================
+   RELATED POSTS
+========================================================= */
+
+.ts-related-posts {
+    margin: 60px 0;
+}
+
+.ts-related-title {
+    margin-bottom: 25px;
+    color: var(--ts-text-950);
+}
+
+.ts-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.ts-related-card {
+    padding: 20px;
+    border: 1px solid var(--ts-border-light);
+    border-radius: var(--ts-radius-lg);
+    background: var(--ts-surface);
+}
+
+.ts-related-card h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.ts-related-card a:hover {
+    color: var(--ts-primary);
 }
 
 
@@ -345,7 +557,7 @@ h2.ts-post-title {
 ========================================================= */
 
 .ts-site-footer {
-    padding: 50px 0 20px;
+    padding: 60px 0 25px;
     background: var(--ts-text-950);
     color: var(--ts-surface);
 }
@@ -363,8 +575,8 @@ h2.ts-post-title {
 
 .ts-footer-description {
     max-width: 450px;
-    margin: 10px 0 0;
-    color: var(--ts-text-600);
+    margin-top: 12px;
+    color: var(--ts-text-500);
 }
 
 .ts-footer-menu {
@@ -377,7 +589,7 @@ h2.ts-post-title {
 }
 
 .ts-footer-menu a {
-    color: var(--ts-text-600);
+    color: var(--ts-text-500);
 }
 
 .ts-footer-menu a:hover {
@@ -387,7 +599,7 @@ h2.ts-post-title {
 .ts-footer-bottom {
     margin-top: 35px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, .12);
     color: var(--ts-text-500);
     font-size: 14px;
 }
@@ -397,55 +609,64 @@ h2.ts-post-title {
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
 
     .ts-container {
-        width: min(100% - 30px, 1180px);
+        width: calc(100% - 30px);
     }
 
+
     .ts-header-inner {
-        position: relative;
         min-height: 68px;
     }
+
 
     .ts-menu-toggle {
         display: block;
     }
+
 
     .ts-navigation {
         display: none;
         position: absolute;
         top: 100%;
         inset-inline: 0;
-        z-index: 100;
         padding: 15px;
         background: var(--ts-surface);
         border: 1px solid var(--ts-border-light);
-        border-top: 0;
     }
+
 
     .ts-navigation.is-open {
         display: block;
     }
 
+
     .ts-menu {
         flex-direction: column;
-        align-items: stretch;
         gap: 0;
     }
 
+
     .ts-menu a {
         padding: 12px 8px;
-        border-bottom: 1px solid var(--ts-surface-soft);
+        border-bottom: 1px solid var(--ts-border-light);
     }
+
 
     .ts-footer-inner {
         flex-direction: column;
     }
 
-    .ts-footer-menu {
+
+    .ts-related-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .ts-author-box {
         flex-direction: column;
-        gap: 8px;
+        text-align: center;
     }
 
 }
