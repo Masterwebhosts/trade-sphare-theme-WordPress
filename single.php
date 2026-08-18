@@ -16,397 +16,354 @@ get_header();
 
     <div class="ts-container">
 
-        <div class="ts-content-area">
+        <div class="ts-layout">
 
-            <?php if ( have_posts() ) : ?>
+            <div class="ts-content-area">
 
-                <?php while ( have_posts() ) : the_post(); ?>
+                <?php if ( have_posts() ) : ?>
 
-                    <article id="post-<?php the_ID(); ?>" <?php post_class( 'ts-post' ); ?>>
+                    <?php while ( have_posts() ) : the_post(); ?>
 
-                        <header class="ts-post-header">
+                        <article id="post-<?php the_ID(); ?>" <?php post_class( 'ts-post' ); ?>>
 
-                            <?php
-                            $categories = get_the_category();
+                            <header class="ts-post-header">
 
-                            if ( ! empty( $categories ) ) :
-                            ?>
+                                <?php
+                                $categories = get_the_category();
 
-                                <div class="ts-post-category">
+                                if ( ! empty( $categories ) ) :
+                                ?>
 
-                                    <a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>">
+                                    <div class="ts-post-category">
 
-                                        <?php echo esc_html( $categories[0]->name ); ?>
+                                        <a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>">
+                                            <?php echo esc_html( $categories[0]->name ); ?>
+                                        </a>
 
-                                    </a>
+                                    </div>
+
+                                <?php endif; ?>
+
+                                <h1 class="ts-post-title">
+                                    <?php the_title(); ?>
+                                </h1>
+
+                                <div class="ts-post-meta">
+
+                                    <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+                                        <?php echo esc_html( get_the_date() ); ?>
+                                    </time>
+
+                                    <span>
+                                        <?php
+                                        printf(
+                                            esc_html__( ' â€” Ø¨Ù‚Ù„Ù… %s', 'trade-sphare' ),
+                                            esc_html( get_the_author() )
+                                        );
+                                        ?>
+                                    </span>
+
+                                    <span>
+                                        <?php
+                                        printf(
+                                            esc_html__( ' â€” %s Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©', 'trade-sphare' ),
+                                            esc_html( trade_sphare_get_reading_time() )
+                                        );
+                                        ?>
+                                    </span>
+
+                                </div>
+
+                            </header>
+
+                            <?php if ( has_post_thumbnail() ) : ?>
+
+                                <div class="ts-post-thumbnail">
+
+                                    <?php
+                                    the_post_thumbnail(
+                                        'large',
+                                        array(
+                                            'loading' => 'eager',
+                                        )
+                                    );
+                                    ?>
 
                                 </div>
 
                             <?php endif; ?>
 
-                            <h1 class="ts-post-title">
+                            <div class="ts-post-content">
 
-                                <?php the_title(); ?>
-
-                            </h1>
-
-                            <div class="ts-post-meta">
-
-                                <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
-
-                                    <?php echo esc_html( get_the_date() ); ?>
-
-                                </time>
-
-                                <span>
-
-                                    <?php
-                                    printf(
-                                        esc_html__( ' — بقلم %s', 'trade-sphare' ),
-                                        esc_html( get_the_author() )
-                                    );
-                                    ?>
-
-                                </span>
-
-                                <span>
-
-                                    <?php
-                                    printf(
-                                        esc_html__( ' — %s دقائق قراءة', 'trade-sphare' ),
-                                        esc_html( trade_sphare_get_reading_time() )
-                                    );
-                                    ?>
-
-                                </span>
-
-                            </div>
-
-                        </header>
-
-                        <?php if ( has_post_thumbnail() ) : ?>
-
-                            <div class="ts-post-thumbnail">
+                                <?php the_content(); ?>
 
                                 <?php
-                                the_post_thumbnail(
-                                    'large',
+                                wp_link_pages(
                                     array(
-                                        'loading' => 'eager',
+                                        'before' => '<nav class="ts-pagination" aria-label="' .
+                                            esc_attr__( 'ØµÙØ­Ø§Øª Ø§Ù„Ù…Ù‚Ø§Ù„', 'trade-sphare' ) .
+                                            '">',
+                                        'after'  => '</nav>',
                                     )
                                 );
                                 ?>
 
                             </div>
 
-                        <?php endif; ?>
+                            <!-- Advertiser CTA -->
 
-                        <div class="ts-post-content">
+                            <section class="ts-post-cta">
 
-                            <?php
-
-                            the_content();
-
-                            wp_link_pages(
-                                array(
-                                    'before' => '<nav class="ts-pagination" aria-label="' .
-                                        esc_attr__( 'صفحات المقال', 'trade-sphare' ) .
-                                        '">',
-                                    'after'  => '</nav>',
-                                )
-                            );
-
-                            ?>
-
-                        </div>
-
-                        <!-- Advertiser CTA -->
-
-                        <section class="ts-post-cta">
-
-                            <h2>
-
-                                <?php
-                                esc_html_e(
-                                    'هل تريد الوصول إلى جمهور مستهدف؟',
-                                    'trade-sphare'
-                                );
-                                ?>
-
-                            </h2>
-
-                            <p>
-
-                                <?php
-                                esc_html_e(
-                                    'اعرض إعلانك على Trade Sphare واحصل على فرص نمو أفضل.',
-                                    'trade-sphare'
-                                );
-                                ?>
-
-                            </p>
-
-                            <a
-                                class="ts-button"
-                                href="<?php echo esc_url( home_url( '/#advertisers' ) ); ?>"
-                            >
-
-                                <?php
-                                esc_html_e(
-                                    'ابدأ الإعلان',
-                                    'trade-sphare'
-                                );
-                                ?>
-
-                            </a>
-
-                        </section>
-
-                        <!-- Publisher CTA -->
-
-                        <section class="ts-post-cta">
-
-                            <h2>
-
-                                <?php
-                                esc_html_e(
-                                    'هل لديك محتوى أو موقع؟',
-                                    'trade-sphare'
-                                );
-                                ?>
-
-                            </h2>
-
-                            <p>
-
-                                <?php
-                                esc_html_e(
-                                    'انضم إلى شبكة الناشرين وحقق دخلًا من المحتوى الخاص بك.',
-                                    'trade-sphare'
-                                );
-                                ?>
-
-                            </p>
-
-                            <a
-                                class="ts-button"
-                                href="<?php echo esc_url( home_url( '/#publishers' ) ); ?>"
-                            >
-
-                                <?php
-                                esc_html_e(
-                                    'انضم كناشر',
-                                    'trade-sphare'
-                                );
-                                ?>
-
-                            </a>
-
-                        </section>
-
-                        <!-- Tags -->
-
-                        <footer class="ts-post-footer">
-
-                            <?php
-
-                            $tags = get_the_tags();
-
-                            if ( $tags ) :
-
-                            ?>
-
-                                <div class="ts-post-meta">
-
-                                    <strong>
-
-                                        <?php
-                                        esc_html_e(
-                                            'الوسوم:',
-                                            'trade-sphare'
-                                        );
-                                        ?>
-
-                                    </strong>
-
-                                    <?php foreach ( $tags as $tag ) : ?>
-
-                                        <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>">
-
-                                            <?php echo esc_html( $tag->name ); ?>
-
-                                        </a>
-
-                                    <?php endforeach; ?>
-
-                                </div>
-
-                            <?php endif; ?>
-
-                        </footer>
-
-                        <!-- Author Box -->
-
-                        <section class="ts-author-box">
-
-                            <div class="ts-author-avatar">
-
-                                <?php
-                                echo get_avatar(
-                                    get_the_author_meta( 'ID' ),
-                                    80
-                                );
-                                ?>
-
-                            </div>
-
-                            <div class="ts-author-content">
-
-                                <h3>
-
-                                    <?php echo esc_html( get_the_author() ); ?>
-
-                                </h3>
+                                <h2>
+                                    <?php
+                                    esc_html_e(
+                                        'Ù‡Ù„ ØªØ±ÙŠØ¯ Ø§Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ø¬Ù…Ù‡ÙˆØ± Ù…Ø³ØªÙ‡Ø¯ÙØŸ',
+                                        'trade-sphare'
+                                    );
+                                    ?>
+                                </h2>
 
                                 <p>
+                                    <?php
+                                    esc_html_e(
+                                        'Ø§Ø¹Ø±Ø¶ Ø¥Ø¹Ù„Ø§Ù†Ùƒ Ø¹Ù„Ù‰ Trade Sphare ÙˆØ§Ø­ØµÙ„ Ø¹Ù„Ù‰ ÙØ±Øµ Ù†Ù…Ùˆ Ø£ÙØ¶Ù„.',
+                                        'trade-sphare'
+                                    );
+                                    ?>
+                                </p>
+
+                                <a
+                                    class="ts-button"
+                                    href="<?php echo esc_url( home_url( '/#advertisers' ) ); ?>"
+                                >
+                                    <?php
+                                    esc_html_e(
+                                        'Ø§Ø¨Ø¯Ø£ Ø§Ù„Ø¥Ø¹Ù„Ø§Ù†',
+                                        'trade-sphare'
+                                    );
+                                    ?>
+                                </a>
+
+                            </section>
+
+                            <!-- Publisher CTA -->
+
+                            <section class="ts-post-cta">
+
+                                <h2>
+                                    <?php
+                                    esc_html_e(
+                                        'Ù‡Ù„ Ù„Ø¯ÙŠÙƒ Ù…Ø­ØªÙˆÙ‰ Ø£Ùˆ Ù…ÙˆÙ‚Ø¹ØŸ',
+                                        'trade-sphare'
+                                    );
+                                    ?>
+                                </h2>
+
+                                <p>
+                                    <?php
+                                    esc_html_e(
+                                        'Ø§Ù†Ø¶Ù… Ø¥Ù„Ù‰ Ø´Ø¨ÙƒØ© Ø§Ù„Ù†Ø§Ø´Ø±ÙŠÙ† ÙˆØ­Ù‚Ù‚ Ø¯Ø®Ù„Ù‹Ø§ Ù…Ù† Ø§Ù„Ù…Ø­ØªÙˆÙ‰ Ø§Ù„Ø®Ø§Øµ Ø¨Ùƒ.',
+                                        'trade-sphare'
+                                    );
+                                    ?>
+                                </p>
+
+                                <a
+                                    class="ts-button"
+                                    href="<?php echo esc_url( home_url( '/#publishers' ) ); ?>"
+                                >
+                                    <?php
+                                    esc_html_e(
+                                        'Ø§Ù†Ø¶Ù… ÙƒÙ†Ø§Ø´Ø±',
+                                        'trade-sphare'
+                                    );
+                                    ?>
+                                </a>
+
+                            </section>
+
+                            <!-- Tags -->
+
+                            <footer class="ts-post-footer">
+
+                                <?php
+                                $tags = get_the_tags();
+
+                                if ( $tags ) :
+                                ?>
+
+                                    <div class="ts-post-meta">
+
+                                        <strong>
+                                            <?php
+                                            esc_html_e(
+                                                'Ø§Ù„ÙˆØ³ÙˆÙ…:',
+                                                'trade-sphare'
+                                            );
+                                            ?>
+                                        </strong>
+
+                                        <?php foreach ( $tags as $tag ) : ?>
+
+                                            <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>">
+                                                <?php echo esc_html( $tag->name ); ?>
+                                            </a>
+
+                                        <?php endforeach; ?>
+
+                                    </div>
+
+                                <?php endif; ?>
+
+                            </footer>
+
+                            <!-- Author Box -->
+
+                            <section class="ts-author-box">
+
+                                <div class="ts-author-avatar">
 
                                     <?php
-                                    echo esc_html(
-                                        get_the_author_meta( 'description' )
+                                    echo get_avatar(
+                                        get_the_author_meta( 'ID' ),
+                                        80
                                     );
                                     ?>
 
-                                </p>
+                                </div>
 
-                            </div>
+                                <div class="ts-author-content">
 
-                        </section>
+                                    <h3>
+                                        <?php echo esc_html( get_the_author() ); ?>
+                                    </h3>
 
-                        <!-- Related Posts -->
-
-                        <?php
-
-                        $related_posts = new WP_Query(
-                            array(
-                                'posts_per_page' => 3,
-                                'post__not_in'   => array( get_the_ID() ),
-                                'category__in'   => wp_get_post_categories( get_the_ID() ),
-                                'orderby'        => 'rand',
-                            )
-                        );
-
-                        if ( $related_posts->have_posts() ) :
-
-                        ?>
-
-                            <section class="ts-related-posts">
-
-                                <h2 class="ts-related-title">
-
-                                    <?php esc_html_e( 'مقالات ذات صلة', 'trade-sphare' ); ?>
-
-                                </h2>
-
-                                <div class="ts-related-grid">
-
-                                    <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
-
-                                        <article class="ts-related-card">
-
-                                            <div class="ts-related-content">
-
-                                                <?php
-                                                $categories = get_the_category();
-
-                                                if ( ! empty( $categories ) ) :
-                                                ?>
-
-                                                    <span class="ts-related-category">
-
-                                                        <?php echo esc_html( $categories[0]->name ); ?>
-
-                                                    </span>
-
-                                                <?php endif; ?>
-
-                                                <h3 class="ts-related-card-title">
-
-                                                    <a href="<?php the_permalink(); ?>">
-
-                                                        <?php the_title(); ?>
-
-                                                    </a>
-
-                                                </h3>
-
-                                                <time class="ts-related-date">
-
-                                                    <?php echo esc_html( get_the_date() ); ?>
-
-                                                </time>
-
-                                            </div>
-
-                                        </article>
-
-                                    <?php endwhile; ?>
+                                    <p>
+                                        <?php
+                                        echo esc_html(
+                                            get_the_author_meta( 'description' )
+                                        );
+                                        ?>
+                                    </p>
 
                                 </div>
 
                             </section>
 
-                        <?php
+                            <!-- Related Posts -->
 
-                        endif;
+                            <?php
+                            $related_posts = new WP_Query(
+                                array(
+                                    'posts_per_page' => 3,
+                                    'post__not_in'   => array( get_the_ID() ),
+                                    'category__in'   => wp_get_post_categories( get_the_ID() ),
+                                    'orderby'        => 'rand',
+                                )
+                            );
 
-                        wp_reset_postdata();
+                            if ( $related_posts->have_posts() ) :
+                            ?>
 
-                        ?>
+                                <section class="ts-related-posts">
 
-                        <!-- Post Navigation -->
+                                    <h2 class="ts-related-title">
+                                        <?php esc_html_e( 'Ù…Ù‚Ø§Ù„Ø§Øª Ø°Ø§Øª ØµÙ„Ø©', 'trade-sphare' ); ?>
+                                    </h2>
 
-                        <nav
-                            class="ts-post-navigation"
-                            aria-label="<?php esc_attr_e( 'تنقل المقالات', 'trade-sphare' ); ?>"
-                        >
+                                    <div class="ts-related-grid">
 
-                            <div class="ts-post-navigation-previous">
+                                        <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
 
-                                <?php previous_post_link( '%link', '← %title' ); ?>
+                                            <article class="ts-related-card">
 
-                            </div>
+                                                <div class="ts-related-content">
 
-                            <div class="ts-post-navigation-next">
+                                                    <?php
+                                                    $categories = get_the_category();
 
-                                <?php next_post_link( '%link', '%title →' ); ?>
+                                                    if ( ! empty( $categories ) ) :
+                                                    ?>
 
-                            </div>
+                                                        <span class="ts-related-category">
+                                                            <?php echo esc_html( $categories[0]->name ); ?>
+                                                        </span>
 
-                        </nav>
+                                                    <?php endif; ?>
 
-                    </article>
+                                                    <h3 class="ts-related-card-title">
 
-                <?php endwhile; ?>
+                                                        <a href="<?php the_permalink(); ?>">
+                                                            <?php the_title(); ?>
+                                                        </a>
 
-            <?php else : ?>
+                                                    </h3>
 
-                <div class="ts-no-results">
+                                                    <time class="ts-related-date">
+                                                        <?php echo esc_html( get_the_date() ); ?>
+                                                    </time>
 
-                    <h1>
+                                                </div>
 
-                        <?php esc_html_e( 'المقال غير موجود', 'trade-sphare' ); ?>
+                                            </article>
 
-                    </h1>
+                                        <?php endwhile; ?>
 
-                    <p>
+                                    </div>
 
-                        <?php esc_html_e( 'عذرًا لم نتمكن من العثور على المقال المطلوب.', 'trade-sphare' ); ?>
+                                </section>
 
-                    </p>
+                            <?php
+                            endif;
 
-                </div>
+                            wp_reset_postdata();
+                            ?>
 
-            <?php endif; ?>
+                            <!-- Post Navigation -->
+
+                            <nav
+                                class="ts-post-navigation"
+                                aria-label="<?php esc_attr_e( 'ØªÙ†Ù‚Ù„ Ø§Ù„Ù…Ù‚Ø§Ù„Ø§Øª', 'trade-sphare' ); ?>"
+                            >
+
+                                <div class="ts-post-navigation-previous">
+                                    <?php previous_post_link( '%link', 'â† %title' ); ?>
+                                </div>
+
+                                <div class="ts-post-navigation-next">
+                                    <?php next_post_link( '%link', '%title â†’' ); ?>
+                                </div>
+
+                            </nav>
+
+                        </article>
+
+                    <?php endwhile; ?>
+
+                <?php else : ?>
+
+                    <div class="ts-no-results">
+
+                        <h1>
+                            <?php esc_html_e( 'Ø§Ù„Ù…Ù‚Ø§Ù„ ØºÙŠØ± Ù…ÙˆØ¬ÙˆØ¯', 'trade-sphare' ); ?>
+                        </h1>
+
+                        <p>
+                            <?php
+                            esc_html_e(
+                                'Ø¹Ø°Ø±Ù‹Ø§ Ù„Ù… Ù†ØªÙ…ÙƒÙ† Ù…Ù† Ø§Ù„Ø¹Ø«ÙˆØ± Ø¹Ù„Ù‰ Ø§Ù„Ù…Ù‚Ø§Ù„ Ø§Ù„Ù…Ø·Ù„ÙˆØ¨.',
+                                'trade-sphare'
+                            );
+                            ?>
+                        </p>
+
+                    </div>
+
+                <?php endif; ?>
+
+            </div>
+
+            <?php get_sidebar(); ?>
 
         </div>
 
@@ -415,7 +372,5 @@ get_header();
 </main>
 
 <?php
-
 get_footer();
-
 ?>
