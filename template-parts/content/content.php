@@ -1,4 +1,4 @@
-﻿﻿<?php
+<?php
 /**
  * Trade Sphare Post Content
  *
@@ -71,14 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <?php else : ?>
 
         <div class="ts-post-excerpt">
-            <?php
-            echo esc_html(
-                wp_trim_words(
-                    wp_strip_all_tags( get_the_content() ),
-                    30
-                )
-            );
-            ?>
+            <?php echo esc_html( trade_sphare_get_excerpt( 30 ) ); ?>
         </div>
 
     <?php endif; ?>
