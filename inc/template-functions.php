@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function trade_sphare_get_excerpt( $length = 30, $post_id = null ) {
 
-    $post_id = $post_id ? $post_id : get_the_ID();
+    $post_id = $post_id ?: get_the_ID();
 
     if ( ! $post_id ) {
         return '';
@@ -38,6 +38,8 @@ function trade_sphare_get_excerpt( $length = 30, $post_id = null ) {
             'post_content',
             $post_id
         );
+
+        $content = strip_shortcodes( $content );
 
         $excerpt = wp_strip_all_tags( $content );
     }
@@ -61,7 +63,7 @@ function trade_sphare_get_excerpt( $length = 30, $post_id = null ) {
  */
 function trade_sphare_get_primary_category( $post_id = null ) {
 
-    $post_id = $post_id ? $post_id : get_the_ID();
+    $post_id = $post_id ?: get_the_ID();
 
     if ( ! $post_id ) {
         return null;
@@ -84,12 +86,14 @@ function trade_sphare_get_primary_category( $post_id = null ) {
 /**
  * Estimate post reading time.
  *
+ * Supports Arabic and Latin text.
+ *
  * @param int|null $post_id Post ID.
  * @return int
  */
 function trade_sphare_get_reading_time( $post_id = null ) {
 
-    $post_id = $post_id ? $post_id : get_the_ID();
+    $post_id = $post_id ?: get_the_ID();
 
     if ( ! $post_id ) {
         return 1;
@@ -100,11 +104,16 @@ function trade_sphare_get_reading_time( $post_id = null ) {
         $post_id
     );
 
+    $content = strip_shortcodes( $content );
     $content = wp_strip_all_tags( $content );
 
-    $word_count = str_word_count(
-        wp_strip_all_tags( $content )
+    preg_match_all(
+        '/[\p{L}\p{N}]+/u',
+        $content,
+        $matches
     );
+
+    $word_count = count( $matches[0] );
 
     /*
      * Approximate reading speed:
