@@ -52,7 +52,7 @@ get_header();
                                 <a
                                     class="ts-post-thumbnail"
                                     href="<?php the_permalink(); ?>"
-                                    aria-label="<?php echo esc_attr( get_the_title() ); ?>"
+                                    aria-label="<?php echo esc_attr( 'اقرأ: ' . get_the_title() ); ?>"
                                 >
 
                                     <?php
@@ -102,16 +102,7 @@ get_header();
                             </header>
 
                             <div class="ts-post-content">
-
-                                <?php
-                                echo esc_html(
-                                    wp_trim_words(
-                                        get_the_excerpt(),
-                                        22
-                                    )
-                                );
-                                ?>
-
+                                <?php echo esc_html( trade_sphare_get_excerpt( 22 ) ); ?>
                             </div>
 
                             <a
@@ -150,7 +141,7 @@ get_header();
                     <p>
                         <?php
                         esc_html_e(
-                            'لا توجد مقالات متاحة في هذا الأرشيف حاليا.',
+                            'لا توجد مقالات متاحة في هذا الأرشيف حاليًا.',
                             'trade-sphare'
                         );
                         ?>
