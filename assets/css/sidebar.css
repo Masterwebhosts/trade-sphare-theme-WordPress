@@ -1,0 +1,53 @@
+/* =========================================================
+   TRADE SPHARE SIDEBAR
+========================================================= */
+
+.ts-sidebar {
+    width: 100%;
+}
+
+.ts-sidebar-widget {
+    margin: 0 0 24px;
+    padding: 24px;
+    border: 1px solid var(--ts-border);
+    border-radius: var(--ts-radius-lg);
+    background: var(--ts-surface);
+}
+
+.ts-sidebar-widget:last-child {
+    margin-bottom: 0;
+}
+
+.ts-sidebar-widget .widget-title {
+    margin: 0 0 16px;
+    color: var(--ts-text-950);
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.ts-sidebar-widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ts-sidebar-widget li {
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--ts-border-light);
+}
+
+.ts-sidebar-widget li:last-child {
+    border-bottom: 0;
+}
+
+.ts-sidebar-widget a {
+    color: var(--ts-text-700);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ts-sidebar-widget a:hover {
+    color: var(--ts-primary);
+}

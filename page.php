@@ -16,98 +16,104 @@ get_header();
 
     <div class="ts-container">
 
-        <div class="ts-content-area">
+        <div class="ts-layout">
 
-            <?php if ( have_posts() ) : ?>
+            <div class="ts-content-area">
 
-                <?php while ( have_posts() ) : the_post(); ?>
+                <?php if ( have_posts() ) : ?>
 
-                    <article
-                        id="post-<?php the_ID(); ?>"
-                        <?php post_class( 'ts-post' ); ?>
-                    >
+                    <?php while ( have_posts() ) : the_post(); ?>
 
-                        <?php if ( has_post_thumbnail() ) : ?>
+                        <article
+                            id="post-<?php the_ID(); ?>"
+                            <?php post_class( 'ts-post' ); ?>
+                        >
 
-                            <div class="ts-post-thumbnail">
+                            <?php if ( has_post_thumbnail() ) : ?>
 
-                                <a
-                                    href="<?php the_permalink(); ?>"
-                                    aria-label="<?php echo esc_attr( get_the_title() ); ?>"
-                                >
+                                <div class="ts-post-thumbnail">
 
-                                    <?php
-                                    the_post_thumbnail(
-                                        'large',
-                                        array(
-                                            'loading' => 'lazy',
-                                        )
-                                    );
-                                    ?>
+                                    <a
+                                        href="<?php the_permalink(); ?>"
+                                        aria-label="<?php echo esc_attr( get_the_title() ); ?>"
+                                    >
 
-                                </a>
+                                        <?php
+                                        the_post_thumbnail(
+                                            'large',
+                                            array(
+                                                'loading' => 'lazy',
+                                            )
+                                        );
+                                        ?>
+
+                                    </a>
+
+                                </div>
+
+                            <?php endif; ?>
+
+                            <header class="ts-post-header">
+
+                                <div class="ts-post-meta">
+
+                                    <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+                                        <?php echo esc_html( get_the_date() ); ?>
+                                    </time>
+
+                                </div>
+
+                                <h1 class="ts-post-title">
+                                    <?php the_title(); ?>
+                                </h1>
+
+                            </header>
+
+                            <div class="ts-post-content">
+
+                                <?php
+                                the_content();
+
+                                wp_link_pages(
+                                    array(
+                                        'before' => '<nav class="ts-pagination" aria-label="' .
+                                            esc_attr__( 'ØµÙØ­Ø§Øª Ø§Ù„ØµÙØ­Ø©', 'trade-sphare' ) .
+                                            '">',
+                                        'after'  => '</nav>',
+                                    )
+                                );
+                                ?>
 
                             </div>
 
-                        <?php endif; ?>
+                        </article>
 
-                        <header class="ts-post-header">
+                    <?php endwhile; ?>
 
-                            <div class="ts-post-meta">
+                <?php else : ?>
 
-                                <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
-                                    <?php echo esc_html( get_the_date() ); ?>
-                                </time>
+                    <section class="ts-no-results">
 
-                            </div>
+                        <h1>
+                            <?php esc_html_e( 'Ø§Ù„ØµÙØ­Ø© ØºÙŠØ± Ù…ÙˆØ¬ÙˆØ¯Ø©', 'trade-sphare' ); ?>
+                        </h1>
 
-                            <h1 class="ts-post-title">
-                                <?php the_title(); ?>
-                            </h1>
-
-                        </header>
-
-                        <div class="ts-post-content">
-
+                        <p>
                             <?php
-                            the_content();
-
-                            wp_link_pages(
-                                array(
-                                    'before' => '<nav class="ts-pagination" aria-label="' .
-                                        esc_attr__( 'صفحات الصفحة', 'trade-sphare' ) .
-                                        '">',
-                                    'after'  => '</nav>',
-                                )
+                            esc_html_e(
+                                'Ø¹Ø°Ø±Ù‹Ø§ØŒ Ù„Ù… Ù†ØªÙ…ÙƒÙ† Ù…Ù† Ø§Ù„Ø¹Ø«ÙˆØ± Ø¹Ù„Ù‰ Ø§Ù„ØµÙØ­Ø© Ø§Ù„Ù…Ø·Ù„ÙˆØ¨Ø©.',
+                                'trade-sphare'
                             );
                             ?>
+                        </p>
 
-                        </div>
+                    </section>
 
-                    </article>
+                <?php endif; ?>
 
-                <?php endwhile; ?>
+            </div>
 
-            <?php else : ?>
-
-                <section class="ts-no-results">
-
-                    <h1>
-                        <?php esc_html_e( 'الصفحة غير موجودة', 'trade-sphare' ); ?>
-                    </h1>
-
-                    <p>
-                        <?php
-                        esc_html_e(
-                            'عذرًا، لم نتمكن من العثور على الصفحة المطلوبة.',
-                            'trade-sphare'
-                        );
-                        ?>
-                    </p>
-
-                </section>
-
-            <?php endif; ?>
+            <?php get_sidebar(); ?>
 
         </div>
 

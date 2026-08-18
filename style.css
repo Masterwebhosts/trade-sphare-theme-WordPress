@@ -3,7 +3,7 @@ Theme Name: Trade Sphare
 Theme URI: https://tradesphare.com/
 Author: Trade Sphare
 Author URI: https://tradesphare.com/
-Description: قالب WordPress مستقل لمنصة Trade Sphare للإعلانات والناشرين.
+Description: Ù‚Ø§Ù„Ø¨ WordPress Ù…Ø³ØªÙ‚Ù„ Ù„Ù…Ù†ØµØ© Trade Sphare Ù„Ù„Ø¥Ø¹Ù„Ø§Ù†Ø§Øª ÙˆØ§Ù„Ù†Ø§Ø´Ø±ÙŠÙ†.
 Version: 1.0.1
 Text Domain: trade-sphare
 */
@@ -146,7 +146,32 @@ select {
 
 }
 
+/* =========================================================
+   CONTENT + SIDEBAR LAYOUT
+========================================================= */
 
+.ts-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 32px;
+    align-items: start;
+}
+
+.ts-sidebar {
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+
+    .ts-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ts-sidebar {
+        margin-top: 32px;
+    }
+
+}
 
 /* =========================================================
    POSTS
@@ -223,7 +248,7 @@ h1.ts-post-title {
 
 
 
-/* محتوى المقال */
+/* Ù…Ø­ØªÙˆÙ‰ Ø§Ù„Ù…Ù‚Ø§Ù„ */
 
 .ts-post-content {
 
@@ -717,7 +742,7 @@ h1.ts-post-title {
 
 
 
-/* صورة المقال */
+/* ØµÙˆØ±Ø© Ø§Ù„Ù…Ù‚Ø§Ù„ */
 
 .ts-related-image img {
 
@@ -733,7 +758,7 @@ h1.ts-post-title {
 
 
 
-/* في حال عدم وجود صورة */
+/* ÙÙŠ Ø­Ø§Ù„ Ø¹Ø¯Ù… ÙˆØ¬ÙˆØ¯ ØµÙˆØ±Ø© */
 
 .ts-related-placeholder {
 

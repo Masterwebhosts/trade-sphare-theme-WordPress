@@ -55,10 +55,22 @@ function trade_sphare_theme_setup() {
 
     register_nav_menus(
         array(
-            'primary' => __( 'القائمة الرئيسية', 'trade-sphare' ),
-            'footer'  => __( 'قائمة التذييل', 'trade-sphare' ),
+            'primary' => __( 'Ø§Ù„Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©', 'trade-sphare' ),
+            'footer'  => __( 'Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„ØªØ°ÙŠÙŠÙ„', 'trade-sphare' ),
         )
     );
+
+    register_sidebar(
+    array(
+        'name'          => __( 'Sidebar', 'trade-sphare' ),
+        'id'            => 'sidebar-1',
+        'description'   => __( 'Widget area for the main sidebar.', 'trade-sphare' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    )
+);
 
 }
 
