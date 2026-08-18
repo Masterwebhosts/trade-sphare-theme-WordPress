@@ -10,11 +10,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
+/**
+ * Enqueue theme assets.
+ */
 function trade_sphare_enqueue_assets() {
 
     $theme_version = TRADE_SPHARE_VERSION;
 
 
+    /*
+     * Main stylesheet
+     */
     wp_enqueue_style(
         'trade-sphare-style',
         get_stylesheet_uri(),
@@ -23,6 +29,9 @@ function trade_sphare_enqueue_assets() {
     );
 
 
+    /*
+     * Main JavaScript
+     */
     $main_js = TRADE_SPHARE_PATH . '/assets/js/main.js';
 
     if ( file_exists( $main_js ) ) {
@@ -38,6 +47,45 @@ function trade_sphare_enqueue_assets() {
     }
 
 
+    /*
+     * Header JavaScript
+     */
+    $header_js = TRADE_SPHARE_PATH . '/assets/js/header.js';
+
+    if ( file_exists( $header_js ) ) {
+
+        wp_enqueue_script(
+            'trade-sphare-header',
+            TRADE_SPHARE_URI . '/assets/js/header.js',
+            array(),
+            $theme_version,
+            true
+        );
+
+    }
+
+
+    /*
+     * Mobile navigation
+     */
+    $navigation_js = TRADE_SPHARE_PATH . '/assets/js/navigation.js';
+
+    if ( file_exists( $navigation_js ) ) {
+
+        wp_enqueue_script(
+            'trade-sphare-navigation',
+            TRADE_SPHARE_URI . '/assets/js/navigation.js',
+            array(),
+            $theme_version,
+            true
+        );
+
+    }
+
+
+    /*
+     * Homepage CSS
+     */
     if ( is_front_page() ) {
 
         $home_css = TRADE_SPHARE_PATH . '/assets/css/home.css';

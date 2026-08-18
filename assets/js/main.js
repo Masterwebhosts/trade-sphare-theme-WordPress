@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const toggle = document.querySelector('.ts-menu-toggle');
-    const navigation = document.querySelector('.ts-navigation');
+    const navigation = document.querySelector('#ts-primary-navigation');
 
     if (!toggle || !navigation) {
         return;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         toggle.setAttribute(
             'aria-expanded',
-            String(nextState)
+            nextState ? 'true' : 'false'
         );
 
         navigation.classList.toggle(

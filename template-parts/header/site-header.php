@@ -33,20 +33,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             </div>
 
-            <button
-                class="ts-menu-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="ts-primary-navigation"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-
-                <span class="screen-reader-text">
-                    <?php esc_html_e( 'فتح القائمة', 'trade-sphare' ); ?>
-                </span>
-            </button>
 
             <nav
                 id="ts-primary-navigation"
@@ -65,7 +51,29 @@ if ( ! defined( 'ABSPATH' ) ) {
                 ?>
             </nav>
 
+
+            <div class="ts-header-cta">
+                <a href="<?php echo esc_url( home_url( '/advertise/' ) ); ?>">
+                    <?php esc_html_e( 'أعلن معنا', 'trade-sphare' ); ?>
+                </a>
+            </div>
+
+
+            <button
+                class="ts-menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="ts-primary-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <span class="screen-reader-text">
+                    <?php esc_html_e( 'فتح القائمة', 'trade-sphare' ); ?>
+                </span>
+            </button>
+
         </div>
     </div>
 </header>
-
