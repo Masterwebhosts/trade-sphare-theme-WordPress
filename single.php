@@ -55,7 +55,7 @@ get_header();
                                     <span>
                                         <?php
                                         printf(
-                                            esc_html__( 'Ø¨ÙˆØ§Ø³Ø·Ø© %s', 'trade-sphare' ),
+                                            esc_html__( 'بواسطة %s', 'trade-sphare' ),
                                             esc_html( get_the_author() )
                                         );
                                         ?>
@@ -64,7 +64,7 @@ get_header();
                                     <span>
                                         <?php
                                         printf(
-                                            esc_html__( '%s Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©', 'trade-sphare' ),
+                                            esc_html__( '%s دقيقة قراءة', 'trade-sphare' ),
                                             esc_html( trade_sphare_get_reading_time() )
                                         );
                                         ?>
@@ -99,7 +99,7 @@ get_header();
                                 wp_link_pages(
                                     array(
                                         'before' => '<nav class="ts-pagination" aria-label="' .
-                                            esc_attr__( 'ØµÙØ­Ø§Øª Ø§Ù„Ù…Ù‚Ø§Ù„', 'trade-sphare' ) .
+                                            esc_attr__( 'صفحات المقال', 'trade-sphare' ) .
                                             '">',
                                         'after'  => '</nav>',
                                     )
@@ -115,22 +115,22 @@ get_header();
                                 <div class="ts-post-cta-content">
 
                                     <span class="ts-post-cta-label">
-                                        <?php esc_html_e( 'Ù„Ù„Ù…Ø¹Ù„Ù†ÙŠÙ†', 'trade-sphare' ); ?>
+                                        <?php esc_html_e( 'للمعلنين', 'trade-sphare' ); ?>
                                     </span>
 
                                     <h2>
-                                        <?php esc_html_e( 'Ù‡Ù„ ØªØ±ÙŠØ¯ Ø§Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ø¬Ù…Ù‡ÙˆØ± Ù…Ø³ØªÙ‡Ø¯ÙØŸ', 'trade-sphare' ); ?>
+                                        <?php esc_html_e( 'هل تريد الوصول إلى جمهور مستهدف؟', 'trade-sphare' ); ?>
                                     </h2>
 
                                     <p>
-                                        <?php esc_html_e( 'Ø§Ø¹Ø±Ø¶ Ø¥Ø¹Ù„Ø§Ù†Ùƒ Ø¹Ù„Ù‰ Trade Sphare ÙˆÙˆØµÙ„ Ø¥Ù„Ù‰ Ø¬Ù…Ù‡ÙˆØ± Ù…Ù‡ØªÙ… Ø¨Ù…Ù†ØªØ¬Ø§ØªÙƒ ÙˆØ®Ø¯Ù…Ø§ØªÙƒ.', 'trade-sphare' ); ?>
+                                        <?php esc_html_e( 'اعرض إعلانك على Trade Sphare ووصل إلى جمهور مهتم بمنتجاتك وخدماتك.', 'trade-sphare' ); ?>
                                     </p>
 
                                     <a
                                         class="ts-button"
                                         href="<?php echo esc_url( home_url( '/#advertisers' ) ); ?>"
                                     >
-                                        <?php esc_html_e( 'Ø§Ø¨Ø¯Ø£ Ø§Ù„Ø¥Ø¹Ù„Ø§Ù†', 'trade-sphare' ); ?>
+                                        <?php esc_html_e( 'ابدأ الإعلان', 'trade-sphare' ); ?>
                                     </a>
 
                                 </div>
@@ -144,22 +144,22 @@ get_header();
                                 <div class="ts-post-cta-content">
 
                                     <span class="ts-post-cta-label">
-                                        <?php esc_html_e( 'Ù„Ù„Ù†Ø§Ø´Ø±ÙŠÙ†', 'trade-sphare' ); ?>
+                                        <?php esc_html_e( 'للناشرين', 'trade-sphare' ); ?>
                                     </span>
 
                                     <h2>
-                                        <?php esc_html_e( 'Ù‡Ù„ Ù„Ø¯ÙŠÙƒ Ù…ÙˆÙ‚Ø¹ Ø£Ùˆ Ù…Ø­ØªÙˆÙ‰ØŸ', 'trade-sphare' ); ?>
+                                        <?php esc_html_e( 'هل لديك موقع أو محتوى؟', 'trade-sphare' ); ?>
                                     </h2>
 
                                     <p>
-                                        <?php esc_html_e( 'Ø§Ù†Ø¶Ù… Ø¥Ù„Ù‰ Ø´Ø¨ÙƒØ© Ø§Ù„Ù†Ø§Ø´Ø±ÙŠÙ† ÙˆØ§Ø³ØªÙØ¯ Ù…Ù† Ø§Ù„Ù…Ø­ØªÙˆÙ‰ ÙˆØ§Ù„Ø¬Ù…Ù‡ÙˆØ± Ø§Ù„Ø°ÙŠ ØªØ¨Ù†ÙŠÙ‡ Ø¹Ù„Ù‰ Ù…ÙˆÙ‚Ø¹Ùƒ.', 'trade-sphare' ); ?>
+                                        <?php esc_html_e( 'انضم إلى شبكة الناشرين واستفد من المحتوى والجمهور الذي تبنيه على موقعك.', 'trade-sphare' ); ?>
                                     </p>
 
                                     <a
                                         class="ts-button"
                                         href="<?php echo esc_url( home_url( '/#publishers' ) ); ?>"
                                     >
-                                        <?php esc_html_e( 'Ø§Ù†Ø¶Ù… ÙƒÙ†Ø§Ø´Ø±', 'trade-sphare' ); ?>
+                                        <?php esc_html_e( 'انضم كناشر', 'trade-sphare' ); ?>
                                     </a>
 
                                 </div>
@@ -179,7 +179,7 @@ get_header();
                                     <div class="ts-post-tags">
 
                                         <strong>
-                                            <?php esc_html_e( 'Ø§Ù„ÙˆØ³ÙˆÙ…', 'trade-sphare' ); ?>
+                                            <?php esc_html_e( 'الوسوم', 'trade-sphare' ); ?>
                                         </strong>
 
                                         <div class="ts-post-tag-list">
@@ -220,7 +220,7 @@ get_header();
                                 <div class="ts-author-content">
 
                                     <span class="ts-author-label">
-                                        <?php esc_html_e( 'ÙƒØ§ØªØ¨ Ø§Ù„Ù…Ù‚Ø§Ù„', 'trade-sphare' ); ?>
+                                        <?php esc_html_e( 'كاتب المقال', 'trade-sphare' ); ?>
                                     </span>
 
                                     <h3>
@@ -248,10 +248,10 @@ get_header();
                             <?php
                             $related_posts = new WP_Query(
                                 array(
-                                    'posts_per_page' => 3,
-                                    'post__not_in'   => array( get_the_ID() ),
-                                    'category__in'   => wp_get_post_categories( get_the_ID() ),
-                                    'orderby'        => 'rand',
+                                    'posts_per_page'      => 3,
+                                    'post__not_in'        => array( get_the_ID() ),
+                                    'category__in'        => wp_get_post_categories( get_the_ID() ),
+                                    'orderby'             => 'rand',
                                     'ignore_sticky_posts' => true,
                                 )
                             );
@@ -264,11 +264,11 @@ get_header();
                                     <div class="ts-section-heading">
 
                                         <span class="ts-section-label">
-                                            <?php esc_html_e( 'Ø§ÙƒØªØ´Ù Ø§Ù„Ù…Ø²ÙŠØ¯', 'trade-sphare' ); ?>
+                                            <?php esc_html_e( 'اكتشف المزيد', 'trade-sphare' ); ?>
                                         </span>
 
                                         <h2 class="ts-related-title">
-                                            <?php esc_html_e( 'Ù…Ù‚Ø§Ù„Ø§Øª Ø°Ø§Øª ØµÙ„Ø©', 'trade-sphare' ); ?>
+                                            <?php esc_html_e( 'مقالات ذات صلة', 'trade-sphare' ); ?>
                                         </h2>
 
                                     </div>
@@ -354,7 +354,7 @@ get_header();
 
                             <nav
                                 class="ts-post-navigation"
-                                aria-label="<?php esc_attr_e( 'ØªÙ†Ù‚Ù„ Ø§Ù„Ù…Ù‚Ø§Ù„Ø§Øª', 'trade-sphare' ); ?>"
+                                aria-label="<?php echo esc_attr__( 'تنقل المقالات', 'trade-sphare' ); ?>"
                             >
 
                                 <div class="ts-post-navigation-previous">
@@ -362,7 +362,7 @@ get_header();
                                     <?php
                                     previous_post_link(
                                         '%link',
-                                        'â† %title'
+                                        '← %title'
                                     );
                                     ?>
 
@@ -373,7 +373,7 @@ get_header();
                                     <?php
                                     next_post_link(
                                         '%link',
-                                        '%title â†’'
+                                        '%title →'
                                     );
                                     ?>
 
@@ -390,11 +390,11 @@ get_header();
                     <div class="ts-no-results">
 
                         <h1>
-                            <?php esc_html_e( 'Ø§Ù„Ù…Ù‚Ø§Ù„ ØºÙŠØ± Ù…ÙˆØ¬ÙˆØ¯', 'trade-sphare' ); ?>
+                            <?php esc_html_e( 'المقال غير موجود', 'trade-sphare' ); ?>
                         </h1>
 
                         <p>
-                            <?php esc_html_e( 'Ø¹Ø°Ø±Ù‹Ø§ØŒ Ù„Ù… Ù†ØªÙ…ÙƒÙ† Ù…Ù† Ø§Ù„Ø¹Ø«ÙˆØ± Ø¹Ù„Ù‰ Ø§Ù„Ù…Ù‚Ø§Ù„ Ø§Ù„Ù…Ø·Ù„ÙˆØ¨.', 'trade-sphare' ); ?>
+                            <?php esc_html_e( 'عذرًا، لم نتمكن من العثور على المقال المطلوب.', 'trade-sphare' ); ?>
                         </p>
 
                     </div>
