@@ -15,8 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function trade_sphare_enqueue_assets() {
 
-    $theme_version = TRADE_SPHARE_VERSION;
-
+    $theme_version = file_exists( TRADE_SPHARE_PATH . '/style.css' )
+    ? filemtime( TRADE_SPHARE_PATH . '/style.css' )
+    : TRADE_SPHARE_VERSION;
 
     /*
      * Main stylesheet
