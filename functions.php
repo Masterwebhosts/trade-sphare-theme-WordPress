@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'TRADE_SPHARE_VERSION', '1.0.3' );
+define( 'TRADE_SPHARE_VERSION', '1.0.4' );
 define( 'TRADE_SPHARE_PATH', get_template_directory() );
 define( 'TRADE_SPHARE_URI', get_template_directory_uri() );
 
