@@ -3,11 +3,15 @@ Theme Name: Trade Sphare
 Theme URI: https://tradesphare.com/blog
 Author: Trade Sphare
 Author URI: https://tradesphare.com/
-Description: قالب WordPress مستقل لمنصة Trade Sphare للإعلانات والناشرين.
-Version: 1.0.1
+Description: A lightweight WordPress theme for publishers, advertisers, and content-focused websites.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Tested up to: 6.8
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: trade-sphare
 */
-
 /* =========================================================
    1. BRAND TOKENS
 ========================================================= */
@@ -2182,5 +2186,379 @@ h1.ts-post-title {
 
     .ts-post-content h3 {
         font-size: 18px;
+    }
+}
+
+/* =========================================================
+   25. FINAL MOBILE RESPONSIVE FIX
+========================================================= */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.ts-site {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.ts-site-header,
+.ts-site-main,
+.ts-site-footer {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .ts-container {
+        width: calc(100% - 24px);
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    .ts-header-inner {
+        width: 100%;
+        min-width: 0;
+
+        display: flex;
+        align-items: center;
+
+        gap: 12px;
+    }
+
+    .ts-site-branding {
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .ts-site-branding a {
+        max-width: 100%;
+    }
+
+    .ts-site-branding img {
+        width: auto;
+        max-width: 145px;
+        height: auto;
+        max-height: 44px;
+    }
+
+    .ts-site-title {
+        max-width: 145px;
+
+        font-size: 20px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    /* Header CTA */
+
+    .ts-header-cta {
+        flex: 0 0 auto;
+        min-width: 0;
+    }
+
+    .ts-header-cta a {
+        min-height: 40px;
+
+        padding: 8px 12px;
+
+        font-size: 13px;
+    }
+
+
+    /* Mobile Toggle */
+
+    .ts-menu-toggle {
+        display: inline-flex;
+
+        flex: 0 0 42px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+
+    /* Navigation */
+
+    .ts-navigation {
+        display: none;
+
+        position: absolute;
+
+        top: calc(100% + 8px);
+        right: 0;
+        left: 0;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        padding: 10px;
+
+        background: var(--ts-surface);
+
+        border: 1px solid var(--ts-border-light);
+        border-radius: var(--ts-radius-md);
+
+        box-shadow: var(--ts-shadow-md);
+
+        z-index: 1001;
+    }
+
+    .ts-navigation.is-open,
+    .ts-navigation.active,
+    .ts-navigation.open {
+        display: block;
+    }
+
+    .ts-navigation .ts-menu {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+
+        gap: 4px;
+    }
+
+    .ts-navigation .ts-menu>li {
+        width: 100%;
+    }
+
+    .ts-navigation .ts-menu>li>a {
+        width: 100%;
+
+        min-height: 44px;
+
+        padding: 10px 12px;
+
+        justify-content: flex-start;
+    }
+
+    .ts-navigation .ts-menu>li.current-menu-item>a::after,
+    .ts-navigation .ts-menu>li.current_page_item>a::after {
+        right: 12px;
+        left: auto;
+
+        width: 30px;
+    }
+
+
+    /* Main */
+
+    .ts-site-main {
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    .ts-content-area {
+        width: 100%;
+        max-width: 100%;
+
+        padding-block: 35px;
+    }
+
+
+    /* Layout */
+
+    .ts-layout {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 30px;
+    }
+
+    .ts-sidebar {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* Article */
+
+    .ts-post-content {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 22px 18px;
+
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .ts-post-content img,
+    .ts-post-content iframe,
+    .ts-post-content video,
+    .ts-post-content table {
+        max-width: 100%;
+    }
+
+
+    /* CTA */
+
+    .ts-post-cta {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 22px 18px;
+    }
+
+
+    /* Related Posts */
+
+    .ts-related-grid {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+    }
+
+    .ts-related-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* Author */
+
+    .ts-author-box {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+    }
+
+
+    /* Post Navigation */
+
+    .ts-post-navigation {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+    }
+
+    .ts-post-navigation a {
+        max-width: 100%;
+        min-width: 0;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* Footer */
+
+    .ts-site-footer {
+        width: 100%;
+        max-width: 100%;
+
+        overflow: hidden;
+    }
+
+    .ts-footer-main {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 1fr 1fr;
+
+        min-width: 0;
+    }
+
+    .ts-footer-column,
+    .ts-footer-brand {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .ts-footer-description,
+    .ts-footer-tagline {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .ts-container {
+        width: calc(100% - 20px);
+    }
+
+    .ts-header-inner {
+        gap: 8px;
+    }
+
+    .ts-site-branding img {
+        max-width: 125px;
+        max-height: 40px;
+    }
+
+    .ts-site-title {
+        max-width: 125px;
+        font-size: 18px;
+    }
+
+    .ts-header-cta a {
+        padding-inline: 9px;
+
+        font-size: 12px;
+    }
+
+    .ts-menu-toggle {
+        flex-basis: 40px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+    .ts-post-content {
+        padding: 18px 14px;
+    }
+
+    .ts-footer-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .ts-header-cta {
+        display: none;
+    }
+
+    .ts-site-branding img {
+        max-width: 120px;
+    }
+
+    .ts-site-title {
+        max-width: 120px;
+    }
+
+    .ts-container {
+        width: calc(100% - 16px);
     }
 }

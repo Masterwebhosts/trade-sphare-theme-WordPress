@@ -51,14 +51,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                 ?>
             </nav>
 
-
-            <div class="ts-header-cta">
-                <a href="<?php echo esc_url( home_url( '/advertise/' ) ); ?>">
-                    <?php esc_html_e( 'أعلن معنا', 'trade-sphare' ); ?>
-                </a>
-            </div>
-
-
             <button
                 class="ts-menu-toggle"
                 type="button"
