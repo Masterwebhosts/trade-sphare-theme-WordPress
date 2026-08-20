@@ -113,7 +113,7 @@ function trade_sphare_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'trade_sphare_hero_title',
         array(
-            'default'           => 'Ù…Ù†ØµØ© ØªØ¬Ù…Ø¹ Ø§Ù„Ù…Ø¹Ù„Ù†ÙŠÙ† ÙˆØ§Ù„Ù†Ø§Ø´Ø±ÙŠÙ† ÙÙŠ Ù…ÙƒØ§Ù† ÙˆØ§Ø­Ø¯',
+            'default'           => 'منصة تجمع المعلنين والناشرين في مكان واحد',
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
@@ -131,7 +131,7 @@ function trade_sphare_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'trade_sphare_hero_description',
         array(
-            'default'           => 'Trade Sphare ØªØ³Ø§Ø¹Ø¯ Ø§Ù„Ù…Ø¹Ù„Ù†ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ø¬Ù…Ù‡ÙˆØ± Ù…Ø³ØªÙ‡Ø¯ÙØŒ ÙˆØªÙ…ÙƒÙ‘Ù† Ø§Ù„Ù†Ø§Ø´Ø±ÙŠÙ† Ù…Ù† ØªØ­Ù‚ÙŠÙ‚ Ø§Ù„Ø¯Ø®Ù„ Ù…Ù† Ù…ÙˆØ§Ù‚Ø¹Ù‡Ù… ÙˆÙ…Ø­ØªÙˆØ§Ù‡Ù….',
+            'default'           => 'Trade Sphare تساعد المعلنين على الوصول إلى جمهور مستهدف، وتمكّن الناشرين من تحقيق الدخل من مواقعهم ومحتواهم.',
             'sanitize_callback' => 'sanitize_textarea_field',
         )
     );
