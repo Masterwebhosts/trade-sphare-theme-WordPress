@@ -1,6 +1,9 @@
 <?php
 /**
- * Trade Sphare Theme
+ * Trade Sphare WordPress Theme
+ *
+ * Copyright 2026 Masterwebhosts
+ * Licensed under the GNU General Public License v2 or later.
  *
  * @package TradeSphare
  */
