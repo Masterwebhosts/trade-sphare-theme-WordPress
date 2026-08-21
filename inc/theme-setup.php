@@ -27,6 +27,7 @@ function trade_sphare_theme_setup() {
 	/*
 	 * WordPress core features.
 	 */
+	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'custom-logo' );
@@ -34,6 +35,7 @@ function trade_sphare_theme_setup() {
 	add_editor_style( 'style.css' );
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'wp-block-styles' );
 
 	/*
 	 * HTML5 markup.

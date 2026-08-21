@@ -1,13 +1,13 @@
 === Trade Sphare ===
-Contributors: trade-sphare
+Contributors: masterwebhosts
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A lightweight WordPress theme for publishers, advertisers, and content-focused websites.
+A lightweight WordPress theme for publishers, advertisers, blogs, and content-focused websites.
 
 == Description ==
 

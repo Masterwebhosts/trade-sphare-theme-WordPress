@@ -77,7 +77,7 @@ get_header();
                                 wp_link_pages(
                                     array(
                                         'before' => '<nav class="ts-pagination" aria-label="' .
-                                            esc_attr__( 'ØµÙØ­Ø§Øª Ø§Ù„ØµÙØ­Ø©', 'trade-sphare' ) .
+                                            esc_attr__( 'صفحات', 'trade-sphare' ) .
                                             '">',
                                         'after'  => '</nav>',
                                     )
@@ -95,13 +95,13 @@ get_header();
                     <section class="ts-no-results">
 
                         <h1>
-                            <?php esc_html_e( 'Ø§Ù„ØµÙØ­Ø© ØºÙŠØ± Ù…ÙˆØ¬ÙˆØ¯Ø©', 'trade-sphare' ); ?>
+                            <?php esc_html_e( 'الصفحة غير موجودة', 'trade-sphare' ); ?>
                         </h1>
 
                         <p>
                             <?php
                             esc_html_e(
-                                'Ø¹Ø°Ø±Ù‹Ø§ØŒ Ù„Ù… Ù†ØªÙ…ÙƒÙ† Ù…Ù† Ø§Ù„Ø¹Ø«ÙˆØ± Ø¹Ù„Ù‰ Ø§Ù„ØµÙØ­Ø© Ø§Ù„Ù…Ø·Ù„ÙˆØ¨Ø©.',
+                                'عذرا لم نتمكن من العثور على الصفحة المطلوبة.',
                                 'trade-sphare'
                             );
                             ?>
