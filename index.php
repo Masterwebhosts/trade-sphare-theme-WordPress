@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Trade Sphare - Blog Index
  *

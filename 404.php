@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Trade Sphare - 404 Page
  *

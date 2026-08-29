@@ -58,6 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             </div>
 
+
             <!-- Advertisers -->
             <div class="ts-footer-column">
 
@@ -88,6 +89,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             </div>
 
+
             <!-- Publishers -->
             <div class="ts-footer-column">
 
@@ -117,6 +119,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php endif; ?>
 
             </div>
+
 
             <!-- Support -->
             <div class="ts-footer-column">
@@ -150,15 +153,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         </div>
 
+
         <!-- Footer Bottom -->
         <div class="ts-footer-bottom">
 
             <div class="ts-footer-copyright">
+
                 <span>
                     &copy;
                     <?php echo esc_html( wp_date( 'Y' ) ); ?>
                     <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
                 </span>
+
+                <span class="ts-footer-credit">
+                    &nbsp;|&nbsp;
+                    <a
+                        href="https://tradesphare.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Trade Sphare
+                    </a>
+                </span>
+
             </div>
 
             <div class="ts-footer-bottom-links">
