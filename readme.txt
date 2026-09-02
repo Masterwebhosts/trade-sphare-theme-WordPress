@@ -4,7 +4,7 @@ Tags: blog, custom-logo, custom-menu, featured-images, rtl-language-support, thr
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -257,7 +257,7 @@ https://tradesphare.com/
 
 == Changelog ==
 
-= 1.0.6 =
+= 1.0.7 =
 * Converted the theme interface and user-facing content to English.
 * Improved the reusable and generic homepage.
 * Improved homepage customization options.

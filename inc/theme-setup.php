@@ -75,23 +75,11 @@ function trade_sphare_theme_setup() {
 			'footer_support' => __( 'Footer - Support', 'trade-sphare' ),
 		)
 	);
-
-	/*
-	 * Main sidebar.
-	 */
-	register_sidebar(
-		array(
-			'name'          => __( 'Sidebar', 'trade-sphare' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Widget area for the main sidebar.', 'trade-sphare' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
 }
 
+/**
+ * Initialize theme setup.
+ */
 add_action(
 	'after_setup_theme',
 	'trade_sphare_theme_setup'
