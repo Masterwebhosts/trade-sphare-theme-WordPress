@@ -69,10 +69,10 @@ function trade_sphare_theme_setup() {
 	 */
 	register_nav_menus(
 		array(
-			'primary'            => __( 'القائمة الرئيسية', 'trade-sphare' ),
-			'footer_advertisers' => __( 'Footer - Advertisers', 'trade-sphare' ),
-			'footer_publishers'  => __( 'Footer - Publishers', 'trade-sphare' ),
-			'footer_support'     => __( 'Footer - Support', 'trade-sphare' ),
+			'primary'        => __( 'Primary Navigation', 'trade-sphare' ),
+			'footer_quick'   => __( 'Footer - Quick Links', 'trade-sphare' ),
+			'footer_content' => __( 'Footer - Resources', 'trade-sphare' ),
+			'footer_support' => __( 'Footer - Support', 'trade-sphare' ),
 		)
 	);
 
@@ -96,4 +96,3 @@ add_action(
 	'after_setup_theme',
 	'trade_sphare_theme_setup'
 );
-

@@ -1,6 +1,6 @@
 /* =========================================================
-   TRADE SPHARE HOME
-   Brand-aligned homepage styles
+   THEME HOMEPAGE
+   Clean and reusable homepage styles
    ========================================================= */
 
 
@@ -179,7 +179,7 @@
 
 
 /* =========================================================
-   BLOG
+   LATEST POSTS
    ========================================================= */
 
 .ts-home-blog {
@@ -208,7 +208,7 @@
 
 .ts-text-link:hover {
     color: var(--ts-primary-hover);
-    transform: translateX(-2px);
+    transform: translateX(2px);
 }
 
 .ts-home-post-grid {
@@ -299,7 +299,7 @@
 
 
 /* =========================================================
-   CTA
+   CALL TO ACTION
    ========================================================= */
 
 .ts-home-cta {

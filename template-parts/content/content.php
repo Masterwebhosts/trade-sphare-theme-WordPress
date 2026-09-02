@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <a
             class="ts-post-thumbnail"
             href="<?php the_permalink(); ?>"
-            aria-label="<?php echo esc_attr( 'اقرأ: ' . get_the_title() ); ?>"
+            aria-label="<?php echo esc_attr( 'Read: ' . get_the_title() ); ?>"
         >
             <?php
             the_post_thumbnail(
@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <span>
                     <?php
                     printf(
-                        esc_html__( 'بواسطة %s', 'trade-sphare' ),
+                        esc_html__( 'By %s', 'trade-sphare' ),
                         esc_html( get_the_author() )
                     );
                     ?>
@@ -81,9 +81,9 @@ if ( ! defined( 'ABSPATH' ) ) {
         <a
             class="ts-read-more"
             href="<?php the_permalink(); ?>"
-            aria-label="<?php echo esc_attr( 'اقرأ: ' . get_the_title() ); ?>"
+            aria-label="<?php echo esc_attr( 'Read: ' . get_the_title() ); ?>"
         >
-            <?php esc_html_e( 'اقرأ المقال ←', 'trade-sphare' ); ?>
+            <?php esc_html_e( 'Read Article →', 'trade-sphare' ); ?>
         </a>
 
     </footer>

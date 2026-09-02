@@ -25,7 +25,7 @@ get_header();
                 </p>
 
                 <h1 class="ts-post-title">
-                    <?php esc_html_e( 'الصفحة غير موجودة', 'trade-sphare' ); ?>
+                    <?php esc_html_e( 'Page Not Found', 'trade-sphare' ); ?>
                 </h1>
 
             </header>
@@ -35,7 +35,7 @@ get_header();
                 <p>
                     <?php
                     esc_html_e(
-                        'عذرا الصفحة التي تبحث عنها غير موجودة أو ربما تم نقلها.',
+                        'Sorry, the page you are looking for does not exist or may have been moved.',
                         'trade-sphare'
                     );
                     ?>
@@ -49,14 +49,14 @@ get_header();
                     class="ts-button ts-button-primary"
                     href="<?php echo esc_url( home_url( '/' ) ); ?>"
                 >
-                    <?php esc_html_e( 'العودة إلى الرئيسية', 'trade-sphare' ); ?>
+                    <?php esc_html_e( 'Back to Home', 'trade-sphare' ); ?>
                 </a>
 
                 <a
                     class="ts-text-link"
                     href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"
                 >
-                    <?php esc_html_e( 'تصفح المدونة ←', 'trade-sphare' ); ?>
+                    <?php esc_html_e( 'Browse the Blog →', 'trade-sphare' ); ?>
                 </a>
 
             </div>

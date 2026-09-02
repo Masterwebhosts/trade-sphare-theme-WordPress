@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <p class="ts-footer-tagline">
                     <?php
                     esc_html_e(
-                        'منصة تربط المعلنين بالناشرين وتساعدك على الوصول إلى جمهورك المستهدف.',
+                        'A clean and professional WordPress theme designed to help you build a strong online presence.',
                         'trade-sphare'
                     );
                     ?>
@@ -58,19 +58,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             </div>
 
-
-            <!-- Advertisers -->
+            <!-- Quick Links -->
             <div class="ts-footer-column">
 
                 <h2 class="ts-footer-heading">
-                    <?php esc_html_e( 'للمعلنين', 'trade-sphare' ); ?>
+                    <?php esc_html_e( 'Quick Links', 'trade-sphare' ); ?>
                 </h2>
 
                 <?php if ( has_nav_menu( 'footer_advertisers' ) ) : ?>
 
                     <nav
                         class="ts-footer-nav"
-                        aria-label="<?php esc_attr_e( 'روابط المعلنين', 'trade-sphare' ); ?>"
+                        aria-label="<?php esc_attr_e( 'Quick Links', 'trade-sphare' ); ?>"
                     >
                         <?php
                         wp_nav_menu(
@@ -89,19 +88,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             </div>
 
-
-            <!-- Publishers -->
+            <!-- Resources -->
             <div class="ts-footer-column">
 
                 <h2 class="ts-footer-heading">
-                    <?php esc_html_e( 'للناشرين', 'trade-sphare' ); ?>
+                    <?php esc_html_e( 'Resources', 'trade-sphare' ); ?>
                 </h2>
 
                 <?php if ( has_nav_menu( 'footer_publishers' ) ) : ?>
 
                     <nav
                         class="ts-footer-nav"
-                        aria-label="<?php esc_attr_e( 'روابط الناشرين', 'trade-sphare' ); ?>"
+                        aria-label="<?php esc_attr_e( 'Resources', 'trade-sphare' ); ?>"
                     >
                         <?php
                         wp_nav_menu(
@@ -120,19 +118,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             </div>
 
-
             <!-- Support -->
             <div class="ts-footer-column">
 
                 <h2 class="ts-footer-heading">
-                    <?php esc_html_e( 'الدعم', 'trade-sphare' ); ?>
+                    <?php esc_html_e( 'Support', 'trade-sphare' ); ?>
                 </h2>
 
                 <?php if ( has_nav_menu( 'footer_support' ) ) : ?>
 
                     <nav
                         class="ts-footer-nav"
-                        aria-label="<?php esc_attr_e( 'روابط الدعم', 'trade-sphare' ); ?>"
+                        aria-label="<?php esc_attr_e( 'Support', 'trade-sphare' ); ?>"
                     >
                         <?php
                         wp_nav_menu(
@@ -152,7 +149,6 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
 
         </div>
-
 
         <!-- Footer Bottom -->
         <div class="ts-footer-bottom">

@@ -22,14 +22,14 @@ get_header();
 
                 <h1 class="ts-post-title">
                     <?php
-                    esc_html_e( 'المدونة', 'trade-sphare' );
+                    esc_html_e( 'Blog', 'trade-sphare' );
                     ?>
                 </h1>
 
                 <p class="ts-post-content">
                     <?php
                     esc_html_e(
-                        'أحدث المقالات والمعلومات المفيدة من Trade Sphare.',
+                        'Latest articles, insights, and useful information from Trade Sphare.',
                         'trade-sphare'
                     );
                     ?>
@@ -55,15 +55,15 @@ get_header();
 
                 <nav
                     class="ts-pagination"
-                    aria-label="<?php esc_attr_e( 'التنقل بين الصفحات', 'trade-sphare' ); ?>"
+                    aria-label="<?php esc_attr_e( 'Page navigation', 'trade-sphare' ); ?>"
                 >
 
                     <?php
                     the_posts_pagination(
                         array(
                             'mid_size'  => 2,
-                            'prev_text' => __( '← السابق', 'trade-sphare' ),
-                            'next_text' => __( 'التالي →', 'trade-sphare' ),
+                            'prev_text' => __( '← Previous', 'trade-sphare' ),
+                            'next_text' => __( 'Next →', 'trade-sphare' ),
                         )
                     );
                     ?>
@@ -75,13 +75,13 @@ get_header();
                 <section class="ts-no-results">
 
                     <h2>
-                        <?php esc_html_e( 'لا توجد نتائج', 'trade-sphare' ); ?>
+                        <?php esc_html_e( 'No Results Found', 'trade-sphare' ); ?>
                     </h2>
 
                     <p>
                         <?php
                         esc_html_e(
-                            'لم يتم العثور على أي محتوى لعرضه حاليا.',
+                            'No content was found to display at this time.',
                             'trade-sphare'
                         );
                         ?>

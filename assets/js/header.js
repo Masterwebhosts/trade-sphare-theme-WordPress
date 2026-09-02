@@ -33,4 +33,3 @@ document.addEventListener('DOMContentLoaded', function () {
         navigation.classList.remove('is-open');
     });
 });
-

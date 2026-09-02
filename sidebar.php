@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <aside
     id="secondary"
     class="ts-sidebar"
-    aria-label="<?php esc_attr_e( 'Ø§Ù„Ø´Ø±ÙŠØ· Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ', 'trade-sphare' ); ?>"
+    aria-label="<?php esc_attr_e( 'Sidebar', 'trade-sphare' ); ?>"
 >
 
     <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
@@ -25,11 +25,11 @@ if ( ! defined( 'ABSPATH' ) ) {
         <section class="widget ts-sidebar-placeholder">
 
             <h2 class="widget-title">
-                <?php esc_html_e( 'Ø§Ù„Ø´Ø±ÙŠØ· Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ', 'trade-sphare' ); ?>
+                <?php esc_html_e( 'Sidebar', 'trade-sphare' ); ?>
             </h2>
 
             <p>
-                <?php esc_html_e( 'Ø£Ø¶Ù Ø§Ù„ÙˆØ¯Ø¬Ø§Øª Ù…Ù† Ù„ÙˆØ­Ø© Ø§Ù„ØªØ­ÙƒÙ….', 'trade-sphare' ); ?>
+                <?php esc_html_e( 'Add widgets from the WordPress Customizer.', 'trade-sphare' ); ?>
             </p>
 
         </section>

@@ -8,9 +8,8 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
-
 
 /* =========================================================
    BODY CLASS
@@ -24,28 +23,27 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function trade_sphare_body_classes( $classes ) {
 
-    $classes[] = 'trade-sphare-theme';
+	$classes[] = 'trade-sphare-theme';
 
-    if ( is_front_page() ) {
-        $classes[] = 'trade-sphare-front-page';
-    }
+	if ( is_front_page() ) {
+		$classes[] = 'trade-sphare-front-page';
+	}
 
-    if ( is_home() ) {
-        $classes[] = 'trade-sphare-blog';
-    }
+	if ( is_home() ) {
+		$classes[] = 'trade-sphare-blog';
+	}
 
-    if ( is_singular( 'post' ) ) {
-        $classes[] = 'trade-sphare-single-post';
-    }
+	if ( is_singular( 'post' ) ) {
+		$classes[] = 'trade-sphare-single-post';
+	}
 
-    return $classes;
+	return $classes;
 }
 
 add_filter(
-    'body_class',
-    'trade_sphare_body_classes'
+	'body_class',
+	'trade_sphare_body_classes'
 );
-
 
 /* =========================================================
    POST CLASS
@@ -59,13 +57,12 @@ add_filter(
  */
 function trade_sphare_post_classes( $classes ) {
 
-    $classes[] = 'ts-post-entry';
+	$classes[] = 'ts-post-entry';
 
-    return $classes;
+	return $classes;
 }
 
 add_filter(
-    'post_class',
-    'trade_sphare_post_classes'
+	'post_class',
+	'trade_sphare_post_classes'
 );
-

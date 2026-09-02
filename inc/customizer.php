@@ -9,7 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 /**
  * Register Customizer settings.
  *
@@ -20,15 +19,15 @@ function trade_sphare_customize_register( $wp_customize ) {
 
 	/*
 	 * =====================================================
-	 * BRAND COLORS
+	 * THEME COLORS
 	 * =====================================================
 	 */
 
 	$wp_customize->add_section(
 		'trade_sphare_colors',
 		array(
-			'title'       => __( 'Trade Sphare Colors', 'trade-sphare' ),
-			'description' => __( 'Customize the main brand colors.', 'trade-sphare' ),
+			'title'       => __( 'Theme Colors', 'trade-sphare' ),
+			'description' => __( 'Customize the main colors used throughout the theme.', 'trade-sphare' ),
 			'priority'    => 30,
 		)
 	);
@@ -93,7 +92,6 @@ function trade_sphare_customize_register( $wp_customize ) {
 		)
 	);
 
-
 	/*
 	 * =====================================================
 	 * HOMEPAGE
@@ -104,7 +102,7 @@ function trade_sphare_customize_register( $wp_customize ) {
 		'trade_sphare_home',
 		array(
 			'title'       => __( 'Homepage', 'trade-sphare' ),
-			'description' => __( 'Customize homepage content.', 'trade-sphare' ),
+			'description' => __( 'Customize the content and sections displayed on the homepage.', 'trade-sphare' ),
 			'priority'    => 40,
 		)
 	);
@@ -112,7 +110,7 @@ function trade_sphare_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'trade_sphare_hero_title',
 		array(
-			'default'           => 'منصة تجمع المعلنين والناشرين في مكان واحد',
+			'default'           => 'Welcome to Your Website',
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'refresh',
 		)
@@ -121,16 +119,17 @@ function trade_sphare_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'trade_sphare_hero_title',
 		array(
-			'label'   => __( 'Hero Title', 'trade-sphare' ),
-			'section' => 'trade_sphare_home',
-			'type'    => 'text',
+			'label'       => __( 'Hero Title', 'trade-sphare' ),
+			'description' => __( 'Enter the main heading displayed in the homepage hero section.', 'trade-sphare' ),
+			'section'     => 'trade_sphare_home',
+			'type'        => 'text',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'trade_sphare_hero_description',
 		array(
-			'default'           => 'Trade Sphare تساعد المعلنين على الوصول إلى جمهور مستهدف، وتمكّن الناشرين من تحقيق الدخل من مواقعهم ومحتواهم.',
+			'default'           => 'A clean and professional space to share ideas, publish content, and build your online presence.',
 			'sanitize_callback' => 'sanitize_textarea_field',
 			'transport'         => 'refresh',
 		)
@@ -139,9 +138,10 @@ function trade_sphare_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'trade_sphare_hero_description',
 		array(
-			'label'   => __( 'Hero Description', 'trade-sphare' ),
-			'section' => 'trade_sphare_home',
-			'type'    => 'textarea',
+			'label'       => __( 'Hero Description', 'trade-sphare' ),
+			'description' => __( 'Enter a short description for the homepage hero section.', 'trade-sphare' ),
+			'section'     => 'trade_sphare_home',
+			'type'        => 'textarea',
 		)
 	);
 
@@ -157,9 +157,10 @@ function trade_sphare_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'trade_sphare_show_features',
 		array(
-			'label'   => __( 'Show Features Section', 'trade-sphare' ),
-			'section' => 'trade_sphare_home',
-			'type'    => 'checkbox',
+			'label'       => __( 'Show Features Section', 'trade-sphare' ),
+			'description' => __( 'Display the features section on the homepage.', 'trade-sphare' ),
+			'section'     => 'trade_sphare_home',
+			'type'        => 'checkbox',
 		)
 	);
 
@@ -175,9 +176,10 @@ function trade_sphare_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'trade_sphare_show_blog',
 		array(
-			'label'   => __( 'Show Blog Section', 'trade-sphare' ),
-			'section' => 'trade_sphare_home',
-			'type'    => 'checkbox',
+			'label'       => __( 'Show Blog Section', 'trade-sphare' ),
+			'description' => __( 'Display the latest posts section on the homepage.', 'trade-sphare' ),
+			'section'     => 'trade_sphare_home',
+			'type'        => 'checkbox',
 		)
 	);
 
@@ -193,9 +195,10 @@ function trade_sphare_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'trade_sphare_show_cta',
 		array(
-			'label'   => __( 'Show CTA Section', 'trade-sphare' ),
-			'section' => 'trade_sphare_home',
-			'type'    => 'checkbox',
+			'label'       => __( 'Show CTA Section', 'trade-sphare' ),
+			'description' => __( 'Display the call-to-action section on the homepage.', 'trade-sphare' ),
+			'section'     => 'trade_sphare_home',
+			'type'        => 'checkbox',
 		)
 	);
 }
@@ -204,7 +207,6 @@ add_action(
 	'customize_register',
 	'trade_sphare_customize_register'
 );
-
 
 /**
  * Output dynamic Customizer CSS.

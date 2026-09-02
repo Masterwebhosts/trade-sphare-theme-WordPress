@@ -1,235 +1,428 @@
 ﻿<?php
 /**
- * Trade Sphare Home Page
+ * Clean & Professional Homepage
  *
  * @package TradeSphare
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
 get_header();
+
+$hero_title = get_theme_mod(
+	'trade_sphare_hero_title',
+	__( 'Welcome to Your Website', 'trade-sphare' )
+);
+
+$hero_description = get_theme_mod(
+	'trade_sphare_hero_description',
+	__(
+		'A clean and professional space to share ideas, publish content, and build your online presence.',
+		'trade-sphare'
+	)
+);
+
+$show_features = get_theme_mod(
+	'trade_sphare_show_features',
+	true
+);
+
+$show_blog = get_theme_mod(
+	'trade_sphare_show_blog',
+	true
+);
+
+$show_cta = get_theme_mod(
+	'trade_sphare_show_cta',
+	true
+);
 ?>
 
-<main id="primary" class="ts-site-main">
+<main id="primary" class="ts-site-main ts-homepage">
 
-    <section class="ts-home-hero">
-        <div class="ts-container">
-            <div class="ts-home-hero-content">
+	<!-- =====================================================
+	     HERO
+	====================================================== -->
 
-                <span class="ts-home-eyebrow">Trade Sphare</span>
+	<section class="ts-home-hero">
+		<div class="ts-container">
 
-                <h1 class="ts-home-title">
-                    &#1605;&#1606;&#1589;&#1577; &#1578;&#1580;&#1605;&#1593; &#1575;&#1604;&#1605;&#1593;&#1604;&#1606;&#1610;&#1606;
-                    <br>
-                    &#1608;&#1575;&#1604;&#1606;&#1575;&#1588;&#1585;&#1610;&#1606; &#1601;&#1610; &#1605;&#1603;&#1575;&#1606; &#1608;&#1575;&#1581;&#1583;
-                </h1>
+			<div class="ts-home-hero-content">
 
-                <p class="ts-home-description">
-                    Trade Sphare &#1578;&#1587;&#1575;&#1593;&#1583; &#1575;&#1604;&#1605;&#1593;&#1604;&#1606;&#1610;&#1606; &#1593;&#1604;&#1609; &#1575;&#1604;&#1608;&#1589;&#1608;&#1604; &#1573;&#1604;&#1609;
-                    &#1580;&#1605;&#1607;&#1608;&#1585; &#1605;&#1587;&#1578;&#1607;&#1583;&#1601;&#1548; &#1608;&#1578;&#1605;&#1603;&#1617;&#1606; &#1575;&#1604;&#1606;&#1575;&#1588;&#1585;&#1610;&#1606; &#1605;&#1606; &#1578;&#1581;&#1602;&#1610;&#1602;
-                    &#1575;&#1604;&#1583;&#1582;&#1604; &#1605;&#1606; &#1605;&#1608;&#1575;&#1602;&#1593;&#1607;&#1605; &#1608;&#1605;&#1581;&#1578;&#1608;&#1575;&#1607;&#1605;.
-                </p>
+				<span class="ts-home-eyebrow">
+					<?php esc_html_e( 'Welcome', 'trade-sphare' ); ?>
+				</span>
 
-                <div class="ts-home-actions">
-                    <a class="ts-button" href="<?php echo esc_url( home_url( '/advertise/' ) ); ?>">
-                        &#1571;&#1593;&#1604;&#1606; &#1605;&#1593;&#1606;&#1575;
-                    </a>
+				<h1 class="ts-home-title">
+					<?php echo esc_html( $hero_title ); ?>
+				</h1>
 
-                    <a class="ts-button ts-button-outline" href="<?php echo esc_url( home_url( '/publishers/' ) ); ?>">
-                        &#1575;&#1606;&#1590;&#1605; &#1603;&#1606;&#1575;&#1588;&#1585;
-                    </a>
-                </div>
+				<p class="ts-home-description">
+					<?php echo esc_html( $hero_description ); ?>
+				</p>
 
-            </div>
-        </div>
-    </section>
+				<div class="ts-home-actions">
 
+					<?php if ( $show_blog ) : ?>
 
-    <section class="ts-home-features">
-        <div class="ts-container">
+						<a
+							class="ts-button"
+							href="#latest-posts"
+						>
+							<?php esc_html_e( 'Explore Content', 'trade-sphare' ); ?>
+						</a>
 
-            <div class="ts-section-heading">
-                <span class="ts-home-eyebrow">
-                    &#1604;&#1605;&#1575;&#1584;&#1575; Trade Sphare&#1567;
-                </span>
+					<?php endif; ?>
 
-                <h2>
-                    &#1581;&#1604;&#1608;&#1604; &#1576;&#1587;&#1610;&#1591;&#1577; &#1604;&#1604;&#1606;&#1605;&#1608; &#1575;&#1604;&#1585;&#1602;&#1605;&#1610;
-                </h2>
-            </div>
+					<?php if ( $show_features ) : ?>
 
-            <div class="ts-feature-grid">
+						<a
+							class="ts-button ts-button-outline"
+							href="#features"
+						>
+							<?php esc_html_e( 'Discover More', 'trade-sphare' ); ?>
+						</a>
 
-                <article class="ts-feature-card">
-                    <h3>&#1604;&#1604;&#1605;&#1593;&#1604;&#1606;&#1610;&#1606;</h3>
-                    <p>
-                        &#1571;&#1608;&#1589;&#1604; &#1573;&#1593;&#1604;&#1575;&#1606;&#1575;&#1578;&#1603; &#1573;&#1604;&#1609; &#1575;&#1604;&#1580;&#1605;&#1607;&#1608;&#1585; &#1575;&#1604;&#1605;&#1606;&#1575;&#1587;&#1576;
-                        &#1608;&#1578;&#1575;&#1576;&#1593; &#1571;&#1583;&#1575;&#1569; &#1581;&#1605;&#1604;&#1575;&#1578;&#1603; &#1576;&#1608;&#1590;&#1608;&#1581;.
-                    </p>
-                </article>
+					<?php endif; ?>
 
-                <article class="ts-feature-card">
-                    <h3>&#1604;&#1604;&#1606;&#1575;&#1588;&#1585;&#1610;&#1606;</h3>
-                    <p>
-                        &#1581;&#1608;&#1617;&#1604; &#1605;&#1581;&#1578;&#1608;&#1575;&#1603; &#1608;&#1580;&#1605;&#1607;&#1608;&#1585;&#1603; &#1573;&#1604;&#1609; &#1605;&#1589;&#1583;&#1585;
-                        &#1583;&#1582;&#1604; &#1605;&#1606; &#1582;&#1604;&#1575;&#1604; &#1575;&#1604;&#1573;&#1593;&#1604;&#1575;&#1606;&#1575;&#1578;.
-                    </p>
-                </article>
+				</div>
 
-                <article class="ts-feature-card">
-                    <h3>&#1571;&#1583;&#1608;&#1575;&#1578; &#1584;&#1603;&#1610;&#1577;</h3>
-                    <p>
-                        &#1571;&#1583;&#1608;&#1575;&#1578; &#1578;&#1587;&#1575;&#1593;&#1583;&#1603; &#1593;&#1604;&#1609; &#1573;&#1583;&#1575;&#1585;&#1577; &#1575;&#1604;&#1605;&#1581;&#1578;&#1608;&#1609;
-                        &#1608;&#1578;&#1581;&#1587;&#1610;&#1606; &#1578;&#1580;&#1585;&#1576;&#1577; &#1575;&#1604;&#1586;&#1608;&#1575;&#1585; &#1608;&#1575;&#1604;&#1593;&#1605;&#1604;&#1575;&#1569;.
-                    </p>
-                </article>
+			</div>
 
-            </div>
-        </div>
-    </section>
+		</div>
+	</section>
 
+	<?php if ( $show_features ) : ?>
 
-    <section class="ts-home-blog">
-        <div class="ts-container">
+		<!-- =====================================================
+		     FEATURES
+		====================================================== -->
 
-            <div class="ts-section-heading">
+		<section
+			id="features"
+			class="ts-home-features"
+			aria-labelledby="ts-features-title"
+		>
 
-                <div>
-                    <span class="ts-home-eyebrow">&#1605;&#1606; &#1575;&#1604;&#1605;&#1583;&#1608;&#1606;&#1577;</span>
-                    <h2>&#1571;&#1581;&#1583;&#1579; &#1575;&#1604;&#1605;&#1602;&#1575;&#1604;&#1575;&#1578;</h2>
-                </div>
+			<div class="ts-container">
 
-                <a class="ts-text-link" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">
-                    &#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1605;&#1602;&#1575;&#1604;&#1575;&#1578;
-                </a>
+				<div class="ts-section-heading">
 
-            </div>
+					<div>
 
-            <div class="ts-home-post-grid">
+						<span class="ts-home-eyebrow">
+							<?php esc_html_e( 'Built for the Web', 'trade-sphare' ); ?>
+						</span>
 
-                <?php
-                $latest_posts = new WP_Query(
-                    array(
-                        'post_type'           => 'post',
-                        'post_status'         => 'publish',
-                        'posts_per_page'      => 3,
-                        'ignore_sticky_posts' => true,
-                    )
-                );
-                ?>
+						<h2 id="ts-features-title">
+							<?php esc_html_e( 'Everything You Need for a Professional Website', 'trade-sphare' ); ?>
+						</h2>
 
-                <?php if ( $latest_posts->have_posts() ) : ?>
+					</div>
 
-                    <?php while ( $latest_posts->have_posts() ) : $latest_posts->the_post(); ?>
+				</div>
 
-                        <article id="post-<?php the_ID(); ?>" <?php post_class( 'ts-home-post-card' ); ?>>
+				<div class="ts-feature-grid">
 
-                            <?php if ( has_post_thumbnail() ) : ?>
+					<article class="ts-feature-card">
 
-                                <a
-                                    class="ts-home-post-image"
-                                    href="<?php the_permalink(); ?>"
-                                    aria-label="<?php echo esc_attr( get_the_title() ); ?>"
-                                >
-                                    <?php
-                                    the_post_thumbnail(
-                                        'trade-sphare-card',
-                                        array(
-                                            'loading' => 'lazy',
-                                        )
-                                    );
-                                    ?>
-                                </a>
+						<h3>
+							<?php esc_html_e( 'Clean Design', 'trade-sphare' ); ?>
+						</h3>
 
-                            <?php endif; ?>
+						<p>
+							<?php esc_html_e( 'A modern and focused design that keeps your content clear, readable, and easy to explore.', 'trade-sphare' ); ?>
+						</p>
 
-                            <div class="ts-home-post-content">
+					</article>
 
-                                <div class="ts-post-meta">
-                                    <?php echo esc_html( get_the_date() ); ?>
-                                </div>
+					<article class="ts-feature-card">
 
-                                <h3 class="ts-post-title">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_title(); ?>
-                                    </a>
-                                </h3>
+						<h3>
+							<?php esc_html_e( 'Fully Responsive', 'trade-sphare' ); ?>
+						</h3>
 
-                                <div class="ts-post-excerpt">
-                                    <?php
-                                    echo esc_html(
-                                        wp_trim_words(
-                                            get_the_excerpt(),
-                                            20
-                                        )
-                                    );
-                                    ?>
-                                </div>
+						<p>
+							<?php esc_html_e( 'A consistent experience across desktops, tablets, and mobile devices.', 'trade-sphare' ); ?>
+						</p>
 
-                                <a
-                                    class="ts-text-link"
-                                    href="<?php the_permalink(); ?>"
-                                    aria-label="<?php echo esc_attr( 'اقرأ: ' . get_the_title() ); ?>"
-                                >
-                                    &#1575;&#1602;&#1585;&#1571; &#1575;&#1604;&#1605;&#1602;&#1575;&#1604; &#8592;
-                                </a>
+					</article>
 
-                            </div>
+					<article class="ts-feature-card">
 
-                        </article>
+						<h3>
+							<?php esc_html_e( 'Easy to Customize', 'trade-sphare' ); ?>
+						</h3>
 
-                    <?php endwhile; ?>
+						<p>
+							<?php esc_html_e( 'Flexible layouts and simple structure make it easy to adapt the website to your needs.', 'trade-sphare' ); ?>
+						</p>
 
-                    <?php wp_reset_postdata(); ?>
+					</article>
 
-                <?php else : ?>
+					<article class="ts-feature-card">
 
-                    <p class="ts-no-results">
-                        &#1604;&#1575; &#1578;&#1608;&#1580;&#1583; &#1605;&#1602;&#1575;&#1604;&#1575;&#1578; &#1605;&#1606;&#1588;&#1608;&#1585;&#1577; &#1581;&#1575;&#1604;&#1610;&#1611;&#1575;.
-                    </p>
+						<h3>
+							<?php esc_html_e( 'Content Focused', 'trade-sphare' ); ?>
+						</h3>
 
-                <?php endif; ?>
+						<p>
+							<?php esc_html_e( 'Designed to present articles, pages, ideas, and important information in a clear way.', 'trade-sphare' ); ?>
+						</p>
 
-            </div>
-        </div>
-    </section>
+					</article>
 
+					<article class="ts-feature-card">
 
-    <section class="ts-home-cta">
-        <div class="ts-container">
+						<h3>
+							<?php esc_html_e( 'WordPress Ready', 'trade-sphare' ); ?>
+						</h3>
 
-            <div class="ts-home-cta-box">
+						<p>
+							<?php esc_html_e( 'Built around WordPress standards and ready for websites, blogs, projects, and personal sites.', 'trade-sphare' ); ?>
+						</p>
 
-                <div>
-                    <span class="ts-home-eyebrow">&#1575;&#1576;&#1583;&#1571; &#1575;&#1604;&#1570;&#1606;</span>
+					</article>
 
-                    <h2>
-                        &#1580;&#1575;&#1607;&#1586; &#1604;&#1578;&#1606;&#1605;&#1610;&#1577; &#1605;&#1588;&#1585;&#1608;&#1593;&#1603;&#1567;
-                    </h2>
+					<article class="ts-feature-card">
 
-                    <p>
-                        &#1575;&#1582;&#1578;&#1585; &#1605;&#1575; &#1610;&#1606;&#1575;&#1587;&#1576;&#1603; &#1608;&#1575;&#1576;&#1583;&#1571; &#1605;&#1593; Trade Sphare.
-                    </p>
-                </div>
+						<h3>
+							<?php esc_html_e( 'RTL Support', 'trade-sphare' ); ?>
+						</h3>
 
-                <div class="ts-home-actions">
+						<p>
+							<?php esc_html_e( 'Built-in support for right-to-left languages while maintaining a clean English experience.', 'trade-sphare' ); ?>
+						</p>
 
-                    <a class="ts-button" href="<?php echo esc_url( home_url( '/advertise/' ) ); ?>">
-                        &#1604;&#1604;&#1605;&#1593;&#1604;&#1606;&#1610;&#1606;
-                    </a>
+					</article>
 
-                    <a class="ts-button ts-button-outline" href="<?php echo esc_url( home_url( '/publishers/' ) ); ?>">
-                        &#1604;&#1604;&#1606;&#1575;&#1588;&#1585;&#1610;&#1606;
-                    </a>
+				</div>
 
-                </div>
+			</div>
+		</section>
 
-            </div>
+	<?php endif; ?>
 
-        </div>
-    </section>
+	<?php if ( $show_blog ) : ?>
+
+		<!-- =====================================================
+		     LATEST POSTS
+		====================================================== -->
+
+		<section
+			id="latest-posts"
+			class="ts-home-blog"
+			aria-labelledby="ts-blog-title"
+		>
+
+			<div class="ts-container">
+
+				<div class="ts-section-heading">
+
+					<div>
+
+						<span class="ts-home-eyebrow">
+							<?php esc_html_e( 'From the Blog', 'trade-sphare' ); ?>
+						</span>
+
+						<h2 id="ts-blog-title">
+							<?php esc_html_e( 'Latest Articles', 'trade-sphare' ); ?>
+						</h2>
+
+					</div>
+
+					<?php
+					$posts_page_id = (int) get_option( 'page_for_posts' );
+
+					if ( $posts_page_id ) :
+						?>
+
+						<a
+							class="ts-text-link"
+							href="<?php echo esc_url( get_permalink( $posts_page_id ) ); ?>"
+						>
+							<?php esc_html_e( 'View All Articles', 'trade-sphare' ); ?>
+						</a>
+
+					<?php endif; ?>
+
+				</div>
+
+				<div class="ts-home-post-grid">
+
+					<?php
+					$latest_posts = new WP_Query(
+						array(
+							'post_type'           => 'post',
+							'post_status'         => 'publish',
+							'posts_per_page'      => 3,
+							'ignore_sticky_posts' => true,
+							'no_found_rows'       => true,
+						)
+					);
+					?>
+
+					<?php if ( $latest_posts->have_posts() ) : ?>
+
+						<?php while ( $latest_posts->have_posts() ) : ?>
+
+							<?php $latest_posts->the_post(); ?>
+
+							<article
+								id="post-<?php the_ID(); ?>"
+								<?php post_class( 'ts-home-post-card' ); ?>
+							>
+
+								<?php if ( has_post_thumbnail() ) : ?>
+
+									<a
+										class="ts-home-post-image"
+										href="<?php the_permalink(); ?>"
+										aria-label="<?php echo esc_attr( get_the_title() ); ?>"
+									>
+
+										<?php
+										the_post_thumbnail(
+											'trade-sphare-card',
+											array(
+												'loading' => 'lazy',
+											)
+										);
+										?>
+
+									</a>
+
+								<?php endif; ?>
+
+								<div class="ts-home-post-content">
+
+									<div class="ts-post-meta">
+
+										<time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+											<?php echo esc_html( get_the_date() ); ?>
+										</time>
+
+									</div>
+
+									<h3 class="ts-post-title">
+
+										<a href="<?php the_permalink(); ?>">
+											<?php the_title(); ?>
+										</a>
+
+									</h3>
+
+									<p class="ts-post-excerpt">
+
+										<?php
+										echo esc_html(
+											wp_trim_words(
+												wp_strip_all_tags(
+													get_the_excerpt()
+												),
+												22,
+												'…'
+											)
+										);
+										?>
+
+									</p>
+
+									<a
+										class="ts-text-link"
+										href="<?php the_permalink(); ?>"
+										aria-label="<?php echo esc_attr( sprintf( __( 'Read: %s', 'trade-sphare' ), get_the_title() ) ); ?>"
+									>
+										<?php esc_html_e( 'Read Article →', 'trade-sphare' ); ?>
+									</a>
+
+								</div>
+
+							</article>
+
+						<?php endwhile; ?>
+
+						<?php wp_reset_postdata(); ?>
+
+					<?php else : ?>
+
+						<div class="ts-home-empty">
+
+							<p>
+								<?php esc_html_e( 'No articles have been published yet.', 'trade-sphare' ); ?>
+							</p>
+
+						</div>
+
+					<?php endif; ?>
+
+				</div>
+
+			</div>
+		</section>
+
+	<?php endif; ?>
+
+	<?php if ( $show_cta ) : ?>
+
+		<!-- =====================================================
+		     CTA
+		====================================================== -->
+
+		<section class="ts-home-cta">
+
+			<div class="ts-container">
+
+				<div class="ts-home-cta-box">
+
+					<div>
+
+						<span class="ts-home-eyebrow">
+							<?php esc_html_e( 'Get Started', 'trade-sphare' ); ?>
+						</span>
+
+						<h2>
+							<?php esc_html_e( 'Build Something Great', 'trade-sphare' ); ?>
+						</h2>
+
+						<p>
+							<?php esc_html_e( 'Create a website that reflects your ideas, content, and unique identity.', 'trade-sphare' ); ?>
+						</p>
+
+					</div>
+
+					<div class="ts-home-actions">
+
+						<?php if ( $show_blog ) : ?>
+
+							<a
+								class="ts-button"
+								href="#latest-posts"
+							>
+								<?php esc_html_e( 'Explore the Website', 'trade-sphare' ); ?>
+							</a>
+
+						<?php else : ?>
+
+							<a
+								class="ts-button"
+								href="<?php echo esc_url( home_url( '/' ) ); ?>"
+							>
+								<?php esc_html_e( 'Explore the Website', 'trade-sphare' ); ?>
+							</a>
+
+						<?php endif; ?>
+
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+
+	<?php endif; ?>
 
 </main>
 

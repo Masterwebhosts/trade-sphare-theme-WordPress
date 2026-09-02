@@ -33,11 +33,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             </div>
 
-
             <nav
                 id="ts-primary-navigation"
                 class="ts-navigation"
-                aria-label="<?php esc_attr_e( 'القائمة الرئيسية', 'trade-sphare' ); ?>"
+                aria-label="<?php esc_attr_e( 'Primary Navigation', 'trade-sphare' ); ?>"
             >
                 <?php
                 wp_nav_menu(
@@ -51,7 +50,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                 ?>
             </nav>
 
-  
             <button
                 class="ts-menu-toggle"
                 type="button"
@@ -63,7 +61,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <span></span>
 
                 <span class="screen-reader-text">
-                    <?php esc_html_e( 'فتح القائمة', 'trade-sphare' ); ?>
+                    <?php esc_html_e( 'Open Menu', 'trade-sphare' ); ?>
                 </span>
             </button>
 

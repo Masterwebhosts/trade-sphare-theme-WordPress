@@ -52,7 +52,7 @@ get_header();
                                 <a
                                     class="ts-post-thumbnail"
                                     href="<?php the_permalink(); ?>"
-                                    aria-label="<?php echo esc_attr( 'اقرأ: ' . get_the_title() ); ?>"
+                                    aria-label="<?php echo esc_attr( 'Read: ' . get_the_title() ); ?>"
                                 >
 
                                     <?php
@@ -81,7 +81,7 @@ get_header();
                                         <span>
                                             <?php
                                             printf(
-                                                esc_html__( ' — بقلم %s', 'trade-sphare' ),
+                                                esc_html__( ' — By %s', 'trade-sphare' ),
                                                 esc_html( get_the_author() )
                                             );
                                             ?>
@@ -108,9 +108,9 @@ get_header();
                             <a
                                 class="ts-text-link"
                                 href="<?php the_permalink(); ?>"
-                                aria-label="<?php echo esc_attr( 'اقرأ: ' . get_the_title() ); ?>"
+                                aria-label="<?php echo esc_attr( 'Read: ' . get_the_title() ); ?>"
                             >
-                                <?php esc_html_e( 'اقرأ المقال ←', 'trade-sphare' ); ?>
+                                <?php esc_html_e( 'Read Article →', 'trade-sphare' ); ?>
                             </a>
 
                         </article>
@@ -123,8 +123,8 @@ get_header();
                 the_posts_pagination(
                     array(
                         'mid_size'  => 2,
-                        'prev_text' => __( '← السابق', 'trade-sphare' ),
-                        'next_text' => __( 'التالي →', 'trade-sphare' ),
+                        'prev_text' => __( '← Previous', 'trade-sphare' ),
+                        'next_text' => __( 'Next →', 'trade-sphare' ),
                         'class'     => 'ts-pagination',
                     )
                 );
@@ -135,13 +135,13 @@ get_header();
                 <section class="ts-no-results">
 
                     <h1>
-                        <?php esc_html_e( 'لا توجد نتائج', 'trade-sphare' ); ?>
+                        <?php esc_html_e( 'No Results Found', 'trade-sphare' ); ?>
                     </h1>
 
                     <p>
                         <?php
                         esc_html_e(
-                            'لا توجد مقالات متاحة في هذا الأرشيف حاليًا.',
+                            'There are currently no posts available in this archive.',
                             'trade-sphare'
                         );
                         ?>
